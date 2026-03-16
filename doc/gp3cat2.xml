@@ -23,8 +23,7 @@ Section 5 of Brown and Loday <Cite Key="brow:lod"/>, suitably modified.
 A cat<M>^2</M>-group  <M>\calC = (C_{[2]},C_{\{2\}},C_{\{1\}},C_{\emptyset})</M>  
 comprises four groups (one for each of the subsets of <M>[2]</M>) 
 and <M>15</M> homomorphisms, as shown in the following diagram:
-<Display>
-<![CDATA[
+<Display><![CDATA[
 \vcenter{\xymatrix{
  & C_{[2]} \ar[ddd] <-1.2ex>  \ar[ddd] <-2.0ex>_{\ddot{t}_2,\ddot{h}_2}
      \ar[rrr] <+1.2ex>  \ar[rrr] <+2.0ex>^{\ddot{t}_1,\ddot{h}_1}
@@ -163,8 +162,7 @@ They differ in the down-right group <C>P</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> a := (1,2,3,4,5,6);;  b := (2,6)(3,5);; 
 gap> G := Group( a, b );;  SetName( G, "d12" );
 gap> t1 := GroupHomomorphismByImages( G, G, [a,b], [a^3,b] );; 
@@ -202,8 +200,7 @@ gap> GroupsOfHigherDimensionalGroup( C2a )[4];
 Group([ (), (2,6)(3,5) ])
 gap> GroupsOfHigherDimensionalGroup( C2b )[4];
 Group([ (7,8) ])
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Up2DimensionalGroup"
@@ -222,14 +219,12 @@ but apply equally to cat<M>^2</M>-groups.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Diagonal2DimensionalGroup( C2a );
 [d12 => Group( [ (), (2,6)(3,5) ] )]
 gap> Diagonal2DimensionalGroup( C2b );
 [d12 => Group( [ (7,8) ] )]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="DirectProduct" Arg="C2a,C2b" />
@@ -243,8 +238,7 @@ together with the two <E>objects</E> <M>\calC_{1}</M> and <M>\calC_{2}</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C2ab := DirectProductOp( [ C2a, C2b ], C2a ); 
 (pre-)cat2-group with generating (pre-)cat1-groups:
 1 : [Group( [ (1,2,3,4,5,6), (2,6)(3,5), ( 7, 8, 9,10,11,12), ( 8,12)( 9,11) 
@@ -264,8 +258,7 @@ gap> Projection( C2ab, 2 );
 <mapping: C2ab -> (pre-)cat2-group with generating (pre-)cat1-groups:
 1 : [d12 => Group( [ (1,4)(2,5)(3,6), (2,6)(3,5) ] )]
 2 : [d12 => Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )] >
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="DisplayLeadMaps" Arg="C0" />
@@ -276,14 +269,12 @@ together with their images under the up and left tail and head maps.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> DisplayLeadMaps( C2b );
 (pre-)cat2-group with up-left group: [ (1,2,3,4,5,6), (2,6)(3,5) ]
    up tail=head images: [ (1,4)(2,5)(3,6), (2,6)(3,5) ]
  left tail=head images: [ (1,5,3)(2,6,4), (2,6)(3,5) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Transpose3DimensionalGroup" 
@@ -295,14 +286,12 @@ with groups <M>[G,Q,R,P]</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> TC2a := Transpose3DimensionalGroup( C2a );
 (pre-)cat2-group with generating (pre-)cat1-groups:
 1 : [d12 => Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )]
 2 : [d12 => Group( [ (1,4)(2,5)(3,6), (2,6)(3,5) ] )]
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection Label="cat2-mor">
@@ -341,8 +330,7 @@ using the two methods described above,
 an d verifies that the result is the same in each case. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gamma := GroupHomomorphismByImages( G, G, [a,b], [a^-1,b] );;
 gap> rho := IdentityMapping( R );;
 gap> xi := GroupHomomorphismByImages( Q, Q, [a^2,b], [a^-2,b] );;
@@ -360,8 +348,7 @@ gap> ltmor := Cat1GroupMorphism( left, left, gamma, xi );;
 gap> mor2 := Cat2GroupMorphismByCat1GroupMorphisms( C2a, C2a, upmor, ltmor );; 
 gap> mor1 = mor2; 
 true
-]]>
-</Example>
+]]></Example>
 
 <ManSection Label="cat2-xsq">
    <Attr Name="Cat2GroupOfCrossedSquare"
@@ -378,8 +365,7 @@ The actor crossed square <C>XSact</C> was constructed in section
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> xsC2a := CrossedSquareOfCat2Group( C2a );
 crossed square with crossed modules:
       up = [Group( () ) -> Group( [ (1,4)(2,5)(3,6) ] )]
@@ -401,8 +387,7 @@ gap> C2act := Cat2GroupOfCrossedSquare( XSact );
 2 : [((c5:c4 |X c5:c4) |X (d20 |X d10a))=>(c5:c4 |X d20)]
 gap> Size3d( C2act );
 [ 80000, 400, 400, 20 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection Label="subdiag-cat1">
    <Attr Name="Subdiagonal2DimensionalGroup"
@@ -418,8 +403,7 @@ is <M>(P \ltimes L => P)</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G24 := SmallGroup( 24, 10 );; 
 gap> w := G24.1;; x := G24.2;; y := G24.3;; z := G24.4;; o := One(G24);; 
 gap> R := Subgroup( G24, [x,y] );; 
@@ -435,8 +419,7 @@ gap> dg := Diagonal2DimensionalGroup( C2wxy );;
 gap> C1sub := Subdiagonal2DimensionalGroup( C2wxy );; 
 gap> [ IsCat1Group(dg), IsCat1Group(C1sub), IsSub2DimensionalGroup(dg,C1sub) ];
 [ false, true, true ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SubCat2Group"
@@ -455,8 +438,7 @@ The remaining sub-cat<M>^1</M>-groups are then calculated automatically.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gps := GroupsOfHigherDimensionalGroup( C2ab );;
 gap> c6c2 := Subgroup( gps[1], [ (1,2,3,4,5,6), (8,12)(9,11) ] );;
 gap> c2c2 := Subgroup( gps[2], [ (1,4)(2,5)(3,6), (8,12)(9,11) ] );;
@@ -475,8 +457,7 @@ right tail=head: [ [ (1,4)(2,5)(3,6), ( 8,12)( 9,11) ],
   [ (), ( 8,12)( 9,11) ] ]
  down tail=head: [ [ (1,5,3)(2,6,4), ( 8,12)( 9,11) ], [ (), ( 8,12)( 9,11) ] 
  ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="TrivialSubCat2Group"
@@ -488,16 +469,14 @@ A special case of the previous operation is when all the subgroups are trivial.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> TC2ab := TrivialSubCrossedSquare( C2ab );
 crossed square with crossed modules:
       up = [Group( () ) -> Group( () )]
     left = [Group( () ) -> Group( () )]
    right = [Group( () ) -> Group( () )]
     down = [Group( () ) -> Group( () )]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -544,8 +523,7 @@ representatives of the isomorphism classes of these cat<M>^2</M>-groups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G8 := Group( (1,2), (3,4), (5,6) );;
 gap> A := Subgroup( G8, [ (1,2) ] );; 
 gap> B := Subgroup( G8, [ (3,4) ] );;
@@ -578,8 +556,7 @@ gap> for C2 in iso do DisplayLeadMaps( C2 ); od;
 (pre-)cat2-group with up-left group: [ (1,2), (3,4), (5,6) ]
    up tail/head images: [ (1,2), (), () ], [ (1,2), (), (1,2) ]
  left tail/head images: [ (), (3,4), () ], [ (), (3,4), (3,4) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="AllCat2GroupsWithFixedUp"
@@ -594,8 +571,7 @@ In the second operation the user may also specify the range of the
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> up := Up2DimensionalGroup( iso[1] );                
 [Group( [ (1,2), (3,4), (5,6) ] )=>Group( [ (1,2), (), () ] )]
 gap> AllCat2GroupsWithFixedUp( up );;                    
@@ -615,8 +591,7 @@ gap> for C in L do DisplayLeadMaps( C ); od;
 (pre-)cat2-group with up-left group: [ (1,2), (3,4), (5,6) ]
    up tail=head images: [ (1,2), (), () ]
  left tail=head images: [ (), (3,4), (3,4) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="AllCat2GroupsMatrix"
@@ -640,8 +615,7 @@ number <M>n</M> of these cat<M>^2</M>-groups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> AllCat2GroupsMatrix(d12);;                
 number of cat2-groups found = 41
 1.....1..1.1
@@ -658,8 +632,7 @@ number of cat2-groups found = 41
 111111111111
 gap> AllCat2GroupsNumber(d12); 
 41
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="AllCat2GroupsIterator"
@@ -708,8 +681,7 @@ Classes <C>[1,5,8,10]</C> contain symmetric cat<M>^2</M>-groups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> AllCat2GroupsNumber( d12 );
 41
 gap> reps2 := AllCat2GroupsUpToIsomorphism( d12 );;
@@ -747,8 +719,7 @@ rec( allcat2pos := [ 1, 7, 9, 16, 19, 22, 30, 36, 39, 41 ],
       [ 8, 10 ], [ 8, 11 ], [ 8, 12 ], [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], 
       [ 9, 12 ], [ 10, 10 ], [ 10, 12 ], [ 11, 11 ], [ 11, 12 ], [ 12, 12 ] ],
   omit := false, pisopos := [  ], sisopos := [ 1, 5, 8, 10 ] )
-]]>
-</Example>
+]]></Example>
 
 </Section> 
 

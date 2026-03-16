@@ -117,8 +117,7 @@ the crossed module  <C>X5</C>  constructed in the previous chapter.
 <P/>
 <Index>display a 2d-mapping</Index>
 <Index>order of a 2d-automorphism</Index>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> sigma5 := GroupHomomorphismByImages( c5, c5, [ (5,6,7,8,9) ]
         [ (5,9,8,7,6) ] );;
 gap> rho5 := IdentityMapping( Range( X1 ) );
@@ -148,8 +147,7 @@ gap> KnownPropertiesOfObject( mor5 );
   "IsAutomorphism2DimensionalDomain" ]
 gap> KnownAttributesOfObject( mor5 );
 [ "Name", "Order", "Range", "Source", "SourceHom", "RangeHom" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="IsomorphismPerm2DimensionalGroup"
@@ -175,8 +173,7 @@ or pc-groups.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> q8 := SmallGroup(8,4);;   ## quaternion group 
 gap> XAq8 := XModByAutomorphismGroup( q8 );
 [Group( [ f1, f2, f3 ] )->Group( [ Pcgs([ f1, f2, f3 ]) -> [ f1*f2, f2, f3 ], 
@@ -195,8 +192,7 @@ gap> mor := IsomorphismByIsomorphisms( YAq8, [id,isos4] );;
 gap> ZAq8 := Image( mor );
 [Group( [ (1,2,4,6)(3,8,7,5), (1,3,4,7)(2,5,6,8), (1,4)(2,6)(3,7)(5,8) 
  ] )->SymmetricGroup( [ 1 .. 4 ] )]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="MorphismOfPullback"
@@ -255,8 +251,7 @@ then construct an isomorphism <M>(\gamma,\rho)</M> between them.
 </Description>
 </ManSection> 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> t3 := GroupHomomorphismByImages(g18,s3a,g18gens,[(),(7,8,9),(8,9)]);;     
 gap> e3 := GroupHomomorphismByImages(s3a,g18,s3agens,[(4,5,6),(2,3)(5,6)]);;   
 gap> C3 := Cat1Group( t3, h1, e3 );; 
@@ -276,8 +271,7 @@ Morphism of cat1-groups :-
   [ (4,5,6), (1,2,3), (2,3)(5,6) ]
 : Range Homomorphism maps range generators to:
   [ (7,8,9), (8,9) ]
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -298,8 +292,7 @@ where <M>\sigma s_1 = \gamma(1,s_1)</M>. .
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> phi5 := Cat1GroupMorphismOfXModMorphism( mor5 );
 [[(Aut(c5) |X c5)=>Aut(c5)] => [(Aut(c5) |X c5)=>Aut(c5)]]
 gap> mor3 := XModMorphismOfCat1GroupMorphism( phi3 );;
@@ -315,8 +308,7 @@ Morphism of crossed modules :-
   [ (1,2,3) ]
 : Range Homomorphism maps range generators to:
   [ (7,8,9), (8,9) ]
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -343,12 +335,10 @@ in place of <C>IsomorphismPermGroup</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> iso8 := IsomorphismPerm2DimensionalGroup( C8 );
 [[G8=>d12] => [..]]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="SmallerDegreePermutationRepresentation2DimensionalGroup"
@@ -362,8 +352,7 @@ or pre-cat<M>^1</M>-group.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G := Group( (1,2,3,4)(5,6,7,8) );; 
 gap> H := Subgroup( G, [ (1,3)(2,4)(5,7)(6,8) ] );;
 gap> XG := XModByNormalSubgroup( G, H );
@@ -371,8 +360,7 @@ gap> XG := XModByNormalSubgroup( G, H );
 gap> sdpr := SmallerDegreePermutationRepresentation2DimensionalGroup( XG );; 
 gap> Range( sdpr );
 [Group( [ (1,2) ] )->Group( [ (1,2,3,4) ] )]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -392,8 +380,7 @@ calls the <Ref Oper="CompositionMorphism"/> function for maps
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> H8 := Subgroup(G8,[G8.3,G8.4,G8.6,G8.7]);  SetName( H8, "H8" );
 Group([ f3, f4, f6, f7 ])
 gap> c6 := Subgroup( d12, [b,c] );  SetName( c6, "c6" );
@@ -406,8 +393,7 @@ gap> inc8 := InclusionMorphism2DimensionalDomains( C8, SC8 );
 [[H8=>c6] => [G8=>d12]]
 gap> CompositionMorphism( iso8, inc );                  
 [[H8=>c6] => P[G8=>d12]]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="Kernel"
@@ -422,8 +408,7 @@ but these have not yet been implemented.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c2 := Group( (19,20) );                                    
 Group([ (19,20) ])
 gap> X0 := XModByNormalSubgroup( c2, c2 );  SetName( X0, "X0" );
@@ -517,8 +502,7 @@ The output shows the identity of the reduced cat<M>^1</M>-group, if there is one
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C18a := Cat1Select( 18, 4, 4 );;          
 gap> StructureDescription( C18a );             
 [ "(C3 x C3) : C2", "S3" ]
@@ -526,8 +510,7 @@ gap> QuotientQuasiIsomorphism( C18a, true );
 quo: [ f2 ][ f3 ], [ "1", "C2" ]
 [ [ 2, 1 ], [ 2, 1 ] ], [ 2, 1, 1 ]
 [ [ 2, 1, 1 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SubQuasiIsomorphism"
@@ -537,12 +520,10 @@ This function implements the sub-crossed module process.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> SubQuasiIsomorphism( C18a, false );
 [ [ 2, 1, 1 ], [ 2, 1, 1 ], [ 2, 1, 1 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="QuasiIsomorphism"
@@ -552,12 +533,10 @@ This function implements the general process.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> L18a := QuasiIsomorphism( C18a, [18,4,4], false );
 [ [ 2, 1, 1 ], [ 18, 4, 4 ] ]
-]]>
-</Example>
+]]></Example>
 
 The logs above show that <C>C18a</C> has just one normal sub-crossed module 
 <M>\calN</M> leading to a reduction, and that there are three sub-crossed 

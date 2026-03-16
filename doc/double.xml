@@ -58,8 +58,7 @@ The source of <C>X12</C> has generating set
 <M>\left\{ g = (11,12,13,14,15,16),~ h = (12,16)(13,15) \right\}</M>.
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gens3 := [ (7,8,9), (8,9) ];;
 gap> s3 := Group( gens3 );;
 gap> SetName( s3, "s3" ); 
@@ -91,8 +90,7 @@ gap> D1!.groupoid;
 Gs3
 gap> D1!.prexmod;
 X12
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SquareOfArrows"
@@ -107,16 +105,14 @@ and let <M>m_1 \in S</M> be placed at the centre of the square.
 The following picture illustrates the situation where
 <M>u_1,v_1,w_1,x_1 \in \Omega</M> and <M>a_1,b_1,c_1,d_1 \in g</M>.
 <Display> 
-<!--  \label{square1} \def\labelstyle{\textstyle} -->
-<![CDATA[
+<!--  \label{square1} \def\labelstyle{\textstyle} --><![CDATA[
 \vcenter{\xymatrix @=4pc{  
    u_1 \ar[r]^{a_1}  \ar[d]_{b_1}\ar@{}[dr] |{m_1} 
      & v_1 \ar[d]^{c_1} \\ 
    w_1 \ar[r]_{d_1} 
      & x_1 
 }} 
-]]>
-</Display> 
+]]></Display> 
 
 We think of the square being <E>based</E> at the bottom, right-hand corner, 
 <M>x_1</M>. 
@@ -131,8 +127,7 @@ whereas, in the description, <M>a_1 = (7,8)</M>.
 Similarly for all the other arrows.)
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> a1 := Arrow( Gs3, (7,8), -6, -5 );;
 gap> b1 := Arrow( Gs3, (7,9), -6, -1 );;
 gap> c1 := Arrow( Gs3, (8,9), -5, -3 );;
@@ -159,8 +154,7 @@ gap> p1:= BoundaryOfSquare( sq1 );
 [(7,9) : -3 -> -3]
 gap> ImageElm( bdy1, m1 );
 (7,9)
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -168,8 +162,7 @@ gap> ImageElm( bdy1, m1 );
          Arg="sq1 sq2" />
 <Description>
 When defining a <E>horizontal composition</E>, as illustrated by 
-<Display> 
-<![CDATA[
+<Display> <![CDATA[
 \vcenter{\xymatrix @=4pc{  
    u_1 \ar[r]^{a_1} \ar[d]_{b_1} \ar@{}[dr]|{m_1} 
      & v_1 \ar[r]^{a_2} \ar[d]^{c_1} \ar@{}[dr]|{m_2}
@@ -182,8 +175,7 @@ When defining a <E>horizontal composition</E>, as illustrated by
          & w_1 \ar[r]_{d_1d_2}
            & x_2 
 }} 
-]]>
-</Display> 
+]]></Display> 
 
 we have to move <M>m_1</M>, based at <M>x_1</M>, to the new base <M>x_2</M>, 
 and we do this by using the action of the pre-crossed module of 
@@ -199,8 +191,7 @@ since the first pre-crossed module axiom applies:
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> a2 := Arrow( Gs3, (8,9), -5, -4 );; 
 gap> c2 := Arrow( Gs3, (7,8), -4, -4 );;
 gap> d2 := Arrow( Gs3, (7,9), -3, -4 );;
@@ -228,16 +219,14 @@ gap> m12 := ElementOfSquare( sq12 );
 (11,12)(13,16)(14,15)
 gap> im1d2 * m2 = m12;
 true
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="VerticalProduct"
          Arg="sq1 sq2" />
 <Description>
 Similarly, vertical composition is illustrated by 
-<Display> 
-<![CDATA[
+<Display> <![CDATA[
 \vcenter{\xymatrix @=2pc{  
    u_1 \ar[rr]^{a_1}  \ar[dd]_{b_1} \ar@{}[ddrr]|{m_1}  
      && v_1 \ar[dd]^{c_1} 
@@ -252,8 +241,7 @@ Similarly, vertical composition is illustrated by
    w_3 \ar[rr]_{d_3} 
      && x_3 
 }} 
-]]>
-</Display> 
+]]></Display> 
 <P/>
 Again the boundary condition is satisfied: 
 <Display> 
@@ -265,8 +253,7 @@ Again the boundary condition is satisfied:
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> b3 := Arrow( Gs3, (8,9), -1, -2 );;
 gap> c3 := Arrow( Gs3, (7,9,8), -3, -2 );;
 gap> d3 := Arrow( Gs3, (7,9), -2, -2 );;
@@ -294,13 +281,11 @@ gap> m13 := ElementOfSquare( sq13 );
 (11,13)(14,16)
 gap> m3 * im1c3 = m13;
 true
-]]>
-</Example>
+]]></Example>
 
 The <C>HorizontalProduct</C> and <C>VerticalProduct</C> commute,
 so we may construct products such as: 
-<Display> 
-<![CDATA[
+<Display> <![CDATA[
 \vcenter{\xymatrix @=2pc{  
    u_1 \ar[rr]^{a_1} \ar[dd]_{b_1} \ar@{}[ddrr]|{m_1} 
      && v_1 \ar[rr]^{a_2} \ar[dd]|{c_1} \ar@{}[ddrr]|{m_2}  
@@ -319,8 +304,7 @@ so we may construct products such as:
      && x_3 \ar[rr]_{d_4} 
          &&  x_4 
 }} 
-]]>
-</Display>
+]]></Display>
 where 
 <Display>
 m_3^{d_4}m_4 (m_1^{d_2}m_2)^{c_4} 
@@ -330,8 +314,7 @@ m_3^{d_4}m_4 (m_1^{d_2}m_2)^{c_4}
 <P/>
 Continuing with our example, we check that the two ways of computing 
 the product of four squares  below agree.
-<Display> 
-<![CDATA[
+<Display> <![CDATA[
 \vcenter{\xymatrix @=2pc{  
    -6 \ar[rr]^{(7,8)} \ar[dd]_{(7,9)} \ar@{}[ddrr]|{gh} 
      && -5 \ar[rr]^{(8,9)} \ar[dd]|{(8,9)} \ar@{}[ddrr]|{g^2}  
@@ -350,12 +333,10 @@ the product of four squares  below agree.
      && -2 \ar[rr]_{(7,8)} 
          &&  -3 
 }} 
-]]>
-</Display> 
+]]></Display> 
 
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c4 := Arrow( Gs3, (8,9), -4, -3 );; 
 gap> d4 := Arrow( Gs3, (7,8), -2, -3 );; 
 gap> sq4 := SquareOfArrows( D1, h, d2, c3, c4, d4 );;
@@ -382,8 +363,7 @@ gap> sq1324 := HorizontalProduct( sq13, sq24 );
 gap> sq1234 := VerticalProduct( sq12, sq34 );;
 gap> sq1324 = sq1234;
 true
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -414,8 +394,7 @@ converting basic <C>B0</C> to <C>D0</C>,
 and we check that the same square is produced in each case. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> g2 := (1,2,3,4);;  h2 := (1,3);;
 gap> gend8 := [ g2, h2 ];;
 gap> d8 := Group( gend8 );;
@@ -442,8 +421,7 @@ gap> D0!.prexmod;
 [d8->d8]
 gap> bsq0 = SquareOfArrows( D0, bdy0, a0, b0, c0, d0 ); 
 true
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -453,16 +431,14 @@ true
 
 A double groupoid square
 <Display> 
-<!--  \label{square1} \def\labelstyle{\textstyle} -->
-<![CDATA[
+<!--  \label{square1} \def\labelstyle{\textstyle} --><![CDATA[
 \vcenter{\xymatrix @=4pc{  
    u_1 \ar[r]^{a_1}  \ar[d]_{b_1}\ar@{}[dr] |{m} 
      & v_1 \ar[d]^{c_1} \\ 
    w_1 \ar[r]_{d_1} 
      & x_1 
 }} 
-]]>
-</Display> 
+]]></Display> 
 is <E>commutative</E> if <M>a_1c_1 = b_1d_1</M>, 
 which means that its boundary is the identity. 
 So a double groupoid which consists only of commutative squares 
@@ -483,8 +459,7 @@ We take for our example the groupoid <C>Gd8</C> and the pre-crossed module
 We introduce a new right arrow to construct a square which commutes. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> D16 := DoubleGroupoidWithZeroBoundary( Gs3, d16 );;
 gap> D16!.prexmod;
 [d16->Group( [ () ] )]
@@ -495,8 +470,7 @@ gap> sq16 := SquareOfArrows( D16, (12,18)(13,17)(14,16), a1, b1, e16, d1 );
 (7,9)        (12,18)(13,17)(14,16)        (7,9,8)
   V                                       V
 [-1] ------------- (7,8,9) ------------> [-3]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

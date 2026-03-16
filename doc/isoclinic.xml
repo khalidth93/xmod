@@ -48,8 +48,7 @@ is a special case of this construction.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> d24 := DihedralGroup( IsPermGroup, 24 );; 
 gap> SetName( d24, "d24" );
 gap> Y24 := XModByAutomorphismGroup( d24 );; 
@@ -68,8 +67,7 @@ gap> nat1 := NaturalMorphismByNormalSubPreXMod( X24, Xn1 );;
 gap> Qn1 := FactorPreXMod( X24, Xn1 );; 
 gap> [ Size2d( Xn1 ), Size2d( Qn1 ) ];
 [ [ 4, 8 ], [ 6, 6 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="IntersectionSubXMods"
@@ -81,8 +79,7 @@ of the sources and ranges of <C>X1</C> and <C>X2</C> respectively.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> pos2 := Position( ids, [ [24,6], [12,4] ] );;
 gap> Xn2 := nsx[pos2];; 
 gap> IdGroup( Xn2 );         
@@ -94,8 +91,7 @@ gap> IdGroup( Xn3 );
 gap> Xn23 := IntersectionSubXMods( X24, Xn2, Xn3 );;
 gap> IdGroup( Xn23 );
 [ [ 12, 2 ], [ 6, 2 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="Displacement"
@@ -144,8 +140,7 @@ so <M>\Disp(\calX)</M> is normal in <M>S</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> pos4 := Position( ids, [ [6,2], [24,14] ] );;
 gap> Xn4 := nsx[pos4];; 
 gap> bn4 := Boundary( Xn4 );;
@@ -169,8 +164,7 @@ gap> DisplacementGroup( Xn4, Qn4, Tn4 );
 Group([ (1,5,9)(2,6,10)(3,7,11)(4,8,12) ])
 gap> DisplacementSubgroup( Xn4 );
 Group([ (1,5,9)(2,6,10)(3,7,11)(4,8,12) ])
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CommutatorSubXMod"
@@ -190,8 +184,7 @@ and is normal in <M>\calX</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> CAn23 := CrossActionSubgroup( X24, Xn2, Xn3 );;
 gap> IdGroup( CAn23 );
 [ 12, 2 ]
@@ -200,8 +193,7 @@ gap> IdGroup( Cn23 );
 [ [ 12, 2 ], [ 6, 2 ] ]
 gap> Xn23 = Cn23;
 true
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="DerivedSubXMod"
@@ -214,13 +206,11 @@ where <M>\partial'</M> is the restriction of <M>\partial</M>
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> DXn4 := DerivedSubXMod( Xn4 );;
 gap> IdGroup( DXn4 );
 [ [ 3, 1 ], [ 3, 1 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="FixedPointSubgroupXMod"
@@ -241,15 +231,13 @@ whose elements act trivially on the whole of <M>T \leqslant S</M>
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> fix := FixedPointSubgroupXMod( Xn4, Sn4, Rn4 );
 Group([ (1,7)(2,8)(3,9)(4,10)(5,11)(6,12) ])
 gap> stab := StabilizerSubgroupXMod( Xn4, Sn4, Rn4 );;
 gap> IdGroup( stab );
 [ 12, 5 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="CentreXMod"
@@ -279,8 +267,7 @@ which lie in <M>S</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ZXn4 := CentreXMod( Xn4 );      
 [Group( [ f3*f4 ] )->Group( [ f3, f5 ] )]
 gap> IdGroup( ZXn4 );
@@ -293,8 +280,7 @@ gap> NDXn4 := Normalizer( Xn4, DXn4 );
 [Group( <identity> of ... )->Group( [ f5, f2*f3 ] )]
 gap> IdGroup( NDXn4 );
 [ [ 1, 1 ], [ 12, 5 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="CentralQuotient"
@@ -312,13 +298,11 @@ Similarly, the central quotient of a crossed module
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Q24 := CentralQuotient( d24);  IdGroup( Q24 );                     
 [d24->d24/Z(d24)]
 [ [ 24, 6 ], [ 12, 4 ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsAbelian2DimensionalGroup"
@@ -342,8 +326,7 @@ A crossed module is <E>faithful</E> if the action is faithful.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> [ IsAbelian2DimensionalGroup(Xn4), IsAbelian2DimensionalGroup(X24) ];
 [ false, false ]
 gap> pos7 := Position( ids, [ [3,1], [6,1] ] );;
@@ -353,8 +336,7 @@ gap> [ IsSimplyConnected2DimensionalGroup(Xn4), IsSimplyConnected2DimensionalGro
 [ true, true ]
 gap> [ IsFaithful2DimensionalGroup(Xn4), IsFaithful2DimensionalGroup(X24) ];              
 [ false, true ] 
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="LowerCentralSeriesOfXMod"
@@ -406,8 +388,7 @@ of <M>\calX</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> lcs := LowerCentralSeries( X24 );;      
 gap> List( lcs, g -> IdGroup(g) );
 [ [ [ 24, 6 ], [ 48, 38 ] ], [ [ 12, 2 ], [ 6, 2 ] ], [ [ 6, 2 ], [ 3, 1 ] ], 
@@ -416,8 +397,7 @@ gap> IsNilpotent2DimensionalGroup( X24 );
 false
 gap> NilpotencyClassOf2DimensionalGroup( X24 );
 0
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="IsomorphismXMods"
@@ -429,8 +409,7 @@ provided one exists, or else returns <C>fail</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gend24 := GeneratorsOfGroup( d24 );;             
 gap> a := gend24[1];; b:= gend24[2];; 
 gap> J := Subgroup( d24, [a^2,b] ); 
@@ -446,8 +425,7 @@ gap> SourceHom( iso );
 gap> RangeHom( iso ); 
 [ (1,2,3,4,5,6,7,8,9,10,11,12), (2,12)(3,11)(4,10)(5,9)(6,8) ] -> 
 [ (1,2,3,4,5,6,7,8,9,10,11,12), (1,12)(2,11)(3,10)(4,9)(5,8)(6,7) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Func Name="AllXMods"
@@ -486,8 +464,7 @@ There are <M>40</M> precrossed modules with size <C>[6,6]</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c6 := SmallGroup( 6, 2 );; 
 gap> s3 := SmallGroup( 6, 1 );; 
 gap> Ac6s3 := AllXMods( c6, s3 );;   
@@ -514,8 +491,7 @@ gap> Collected( size36 );
 [ [ [ 1, 36 ], 14 ], [ [ 2, 18 ], 7 ], [ [ 3, 12 ], 21 ], [ [ 4, 9 ], 14 ], 
   [ [ 6, 6 ], 17 ], [ [ 9, 4 ], 102 ], [ [ 12, 3 ], 8 ], [ [ 18, 2 ], 18 ], 
   [ [ 36, 1 ], 4 ] ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -544,8 +520,7 @@ to the trivial group.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G := SmallGroup( 64, 6 );;  StructureDescription( G ); 
 "(C8 x C4) : C2"
 gap> QG := CentralQuotient( G );;  IdGroup( QG );
@@ -562,8 +537,7 @@ gap> QK := CentralQuotient( K );;  IdGroup( QK );
 [ [ 32, 43 ], [ 16, 11 ] ]
 gap> AreIsoclinicDomains( G, K );
 false
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -590,8 +564,7 @@ splits this list into isoclinism classes.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> DerivedSubgroup(G);     
 Group([ f3, f5 ])
 gap> IsStemDomain( G );
@@ -608,8 +581,7 @@ gap> AllStemGroupFamilies( 32 );
   [ [ 32, 27 ], [ 32, 28 ], [ 32, 29 ], [ 32, 30 ], [ 32, 31 ], [ 32, 32 ], 
       [ 32, 33 ], [ 32, 34 ], [ 32, 35 ] ], [ [ 32, 43 ], [ 32, 44 ] ], 
   [ [ 32, 49 ], [ 32, 50 ] ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection Label="group-rank">
    <Attr Name="IsoclinicRank"
@@ -627,14 +599,12 @@ groups of order 128 in <Cite Key="JNO" />.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsoclinicMiddleLength( G );
 1
 gap> IsoclinicRank( G );
 4
-]]>
-</Example>
+]]></Example>
 
 
 </Section>
@@ -670,8 +640,7 @@ are isoclinic to the trivial crossed module.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C8 := Cat1Group( 16, 8, 2 );;
 gap> X8 := XMod(C8);  IdGroup( X8 );
 [Group( [ f1*f2*f3, f3, f4 ] )->Group( [ f2, f2 ] )]
@@ -690,8 +659,7 @@ gap> Display( ism89 );
     [ f2, f2 ] )]], 
   [[Group( [ f3 ] ) -> Group( <identity> of ... )] => [Group( 
     [ f3 ] ) -> Group( <identity> of ... )]] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsStemDomain"
@@ -708,14 +676,12 @@ A method for <C>IsoclinicStemDomain</C> has yet to be implemented.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsStemDomain(X8);
 true
 gap> IsStemDomain(X9);
 false
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="IsoclinicRank"
@@ -728,14 +694,12 @@ are applied to the crossed module.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsoclinicMiddleLength(X8);
 [ 1, 0 ]
 gap> IsoclinicRank(X8);        
 [ 3, 1 ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

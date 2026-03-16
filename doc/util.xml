@@ -52,16 +52,14 @@ in <M>H</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Print( incd8, "\n" );
 [ (11,13,15,17)(12,14,16,18), (11,18)(12,17)(13,16)(14,15) ] ->
 [ (11,13,15,17)(12,14,16,18), (11,18)(12,17)(13,16)(14,15) ]
 gap> imd8 := Image( incd8 );;
 gap> MappingToOne( c4, imd8 );
 [ (11,13,15,17)(12,14,16,18) ] -> [ () ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="InnerAutomorphismsByNormalSubgroup"
@@ -73,14 +71,12 @@ often with <C>G</C> = <C>N</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> autd8 := AutomorphismGroup( d8 );;
 gap> innd8 := InnerAutomorphismsByNormalSubgroup( d8, d8 );;
 gap> GeneratorsOfGroup( innd8 );
 [ ^(1,2,3,4), ^(1,3) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsGroupOfAutomorphisms"
@@ -90,12 +86,10 @@ Tests whether the elements of a group are automorphisms.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsGroupOfAutomorphisms( innd8 );
 true
-]]>
-</Example>
+]]></Example>
 </Section>
 
 
@@ -122,8 +116,7 @@ The resulting <C>Xabmod</C> is isomorphic to the output from
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> x := (6,7)(8,9);;  y := (6,8)(7,9);;  z := (6,9)(7,8);;
 gap> k4a := Group( x, y );;  SetName( k4a, "k4a" );
 gap> gens3a := [ (1,2), (2,3) ];;
@@ -149,8 +142,7 @@ Crossed module [k4a->s3a] :-
   (2,3) --> { source gens --> [ (6,7)(8,9), (6,9)(7,8) ] }
   These 2 automorphisms generate the group of automorphisms.
 
-]]>
-</Example>
+]]></Example>
 </Section>
 
 

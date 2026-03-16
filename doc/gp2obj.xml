@@ -60,8 +60,7 @@ In the example the boundary is the identity mapping on <C>c5</C>
 and the action is trivial. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c5 := Group( (5,6,7,8,9) );;
 gap> SetName( c5, "c5" );
 gap> id5 := IdentityMapping( c5 );;
@@ -69,8 +68,7 @@ gap> ac5 := AutomorphismGroup( c5 );;
 gap> act := MappingToOne( c5, ac5 );;
 gap> XMod( id5, act ) = XModByBoundaryAndAction( id5, act );
 true
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="XModByNormalSubgroup"
@@ -90,8 +88,7 @@ has  <M>s^r = s</M>  for all  <M>s \in S, \; r \in R</M>,
 the source is abelian and the image lies in the centre of the range.
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> q8 := QuaternionGroup( IsPermGroup, 8 );
 Group([ (1,5,3,7)(2,8,4,6), (1,2,3,4)(5,6,7,8) ])
 gap> SetName( q8, "q8" );
@@ -117,8 +114,7 @@ Crossed module [<i>->q8] :-
   (1,5,3,7)(2,8,4,6) --> { source gens --> [ (1,5,3,7)(2,8,4,6) ] }
   (1,2,3,4)(5,6,7,8) --> { source gens --> [ (1,7,3,5)(2,6,4,8) ] }
   These 2 automorphisms generate the group of automorphisms.
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="XModByAutomorphismGroup"
@@ -135,8 +131,7 @@ The boundary maps <M>s \in S</M> to the inner automorphism of <M>S</M>
 by <M>s</M>.
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> X5 := XModByAutomorphismGroup( c5 );
 [c5 -> Aut(c5)] 
 gap> Display( X5 );
@@ -151,8 +146,7 @@ Crossed module [c5->Aut(c5)] :-
   GroupHomomorphismByImages( c5, c5, [ (5,6,7,8,9) ], 
 [ (5,7,9,6,8) ] ) --> { source gens --> [ (5,7,9,6,8) ] }
   This automorphism generates the group of automorphisms.
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="XModByCentralExtension"
@@ -164,8 +158,7 @@ where <M>r \in R</M> acts on <M>S</M> by conjugation
 with <M>\partial^{-1}r</M>.
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gen12 := [ (1,2,3,4,5,6), (2,6)(3,5) ];;
 gap> d12 := Group( gen12 );;                  
 gap> gen6 := [ (7,8,9), (8,9) ];;
@@ -187,8 +180,7 @@ Crossed module [d12->s3] :-
   (7,8,9) --> { source gens --> [ (1,2,3,4,5,6), (1,3)(4,6) ] }
   (8,9) --> { source gens --> [ (1,6,5,4,3,2), (2,6)(3,5) ] }
   These 2 automorphisms generate the group of automorphisms.
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="XModByPullback"
@@ -212,8 +204,7 @@ The example forms a pullback of the crossed module <C>X12</C>
 of the previous subsection. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gens4 := [ (11,12), (12,13), (13,14) ];; 
 gap> s4 := Group( gens4 );; 
 gap> theta := GroupHomomorphismByImages( s4, s3, gens4, [(7,8),(8,9),(7,8)] );;
@@ -232,8 +223,7 @@ gap> infoX1!.projections[2];
 [ (7,8)(9,10), (7,9)(8,10), (2,6)(3,5)(8,9), (1,5,3)(2,6,4)(8,10,9), 
   (1,6,5,4,3,2)(8,9,10) ] -> [ (11,12)(13,14), (11,13)(12,14), (12,13), 
   (12,14,13), (12,13,14) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="XModByAbelianModule"
@@ -263,8 +253,7 @@ subsection <Ref Oper="XModByTrivialAction"/>.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> X8ab := DirectProduct( X8a, X8b );
 [[<-1>->q8]x[<i>->q8]]
 gap> infoX8ab := DirectProductInfo( X8ab );
@@ -276,8 +265,7 @@ rec(
       [[<-1>x<i>->q8xq8] => [<i>->q8]] ] )
 gap> DirectProduct( X8a, X8b, X12 );
 [[[<-1>->q8]x[<i>->q8]]x[d12->s3]]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Source"
@@ -310,8 +298,7 @@ subsection <Ref Oper="XModByCentralExtension"/>.
 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> [ Source( X12 ), Range( X12 ) ];    
 [ d12, s3 ]
 gap> Boundary( X12 ); 
@@ -320,8 +307,7 @@ gap> XModAction( X12 );
 [ (7,8,9), (8,9) ] -> 
 [ [ (1,2,3,4,5,6), (2,6)(3,5) ] -> [ (1,2,3,4,5,6), (1,3)(4,6) ], 
   [ (1,2,3,4,5,6), (2,6)(3,5) ] -> [ (1,6,5,4,3,2), (2,6)(3,5) ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="ImageElmXModAction"
@@ -331,12 +317,10 @@ This function returns the element <M>s^r</M> given by <C>XModAction(X0)</C>.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ImageElmXModAction( X12, (1,2,3,4,5,6), (8,9) );
 (1,6,5,4,3,2)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Size2d"
@@ -354,12 +338,10 @@ and we wish to return a list.
 In the simple example below, <Code>X5</Code> is the automorphism crossed module 
 constructed in subsection <Ref Oper="XModByAutomorphismGroup"/>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Size2d( X5 ); 
 [ 5, 4 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Name"
@@ -385,8 +367,7 @@ The <C>Display</C> function is used to print details of 2d-groups.
 The <C>Print</C> statements at the end of the example list the &GAP; 
 representations and attributes of <Code>X5</Code>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IdGroup( X5 ); 
 [ [ 5, 1 ], [ 4, 1 ] ]
 gap> ext := ExternalSetXMod( X5 ); 
@@ -402,8 +383,7 @@ gap> Print( RepresentationsOfObject(X5), "\n" );
 gap> Print( KnownAttributesOfObject(X5), "\n" );
 [ "Name", "Range", "Source", "IdGroup", "Boundary", "Size2d", "XModAction", 
   "ExternalSetXMod", "HigherDimension" ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -463,8 +443,7 @@ and <C>IsAbelianModule2DimensionalGroup</C>.
 </Description>
 </ManSection>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> [ IsTrivial( X5 ),  IsNonTrivial( X5 ),  IsFinite( X5 ) ];
 [ false, true, true ]
 gap> kpoX5 := KnownPropertiesOfObject(X5);;
@@ -478,8 +457,7 @@ gap> Is2DimensionalGroup(X5);
 true
 gap> IsAutomorphismGroup2DimensionalGroup(X5);
 true
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SubXMod"
@@ -526,8 +504,7 @@ and <C>X4</C> itself.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> s4 := Group( (1,2), (2,3), (3,4) );; 
 gap> a4 := Subgroup( s4, [ (1,2,3), (2,3,4) ] );; 
 gap> k4 := Subgroup( a4, [ (1,2)(3,4), (1,3)(2,4) ] );; 
@@ -541,8 +518,7 @@ true
 gap> NX4 := NormalSubXMods( X4 );;
 gap> Length( NX4 ); 
 5
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="KernelCokernelXMod"
@@ -558,8 +534,7 @@ and the action of <M>C</M> on <M>K</M> is given by <M>k^{Jr} = k^r</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> d8d8 := Group( (1,2,3,4), (1,3), (5,6,7,8), (5,7) );;
 gap> X88 := XModByAutomorphismGroup( d8d8 );;
 gap> Size2d( X88 );
@@ -569,8 +544,7 @@ gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
 gap> StructureDescription( Y88 );
 [ "C2 x C2", "(D8 x D8) : C2" ] 
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -598,8 +572,7 @@ in Chapter <Ref Chap='chap-double' />.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> b1 := (11,12,13,14,15,16,17,18);;  b2 := (12,18)(13,17)(14,16);;
 gap> d16 := Group( b1, b2 );;
 gap> sk4 := Subgroup( d16, [ b1^4, b2 ] );;
@@ -625,8 +598,7 @@ Crossed module :-
 : Boundary homomorphism maps source generators to:
   [ (), () ]
   The automorphism group is trivial
-]]>
-</Example>
+]]></Example>
 
 <Index>Peiffer subgroup</Index>
 <ManSection>
@@ -652,8 +624,7 @@ In the following example the Peiffer subgroup is cyclic of size <M>4</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> P := PeifferSubgroup( P16 );
 Group( [ (11,15)(12,16)(13,17)(14,18), (11,17,15,13)(12,18,16,14) ] )
 gap> X16 := XModByPeifferQuotient( P16 );
@@ -670,8 +641,7 @@ Crossed module Peiffer([d16->sk4]) :-
 gap> iso16 := IsomorphismPermGroup( Source( X16 ) );;
 gap> S16 := Image( iso16 );
 Group([ (1,2), (3,4) ])   
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -740,8 +710,7 @@ as described in section <Ref Sect="sect-cat1select"/>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> g18gens := [ (1,2,3), (4,5,6), (2,3)(5,6) ];;     
 gap> s3agens := [ (7,8,9), (8,9) ];;                
 gap> g18 := Group( g18gens );;  SetName( g18, "g18" ); 
@@ -754,8 +723,7 @@ gap> e1 := GroupHomomorphismByImages(s3a,g18,s3agens,[(1,2,3),(2,3)(5,6)]);
 [ (7,8,9), (8,9) ] -> [ (1,2,3), (2,3)(5,6) ]
 gap> C18 := Cat1Group( t1, h1, e1 );
 [g18=>s3a]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Source"
@@ -794,8 +762,7 @@ It is frequently the case that <M>t=h</M>,
 but not in the example <C>C18</C> above. 
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> [ Source( C18 ), Range( C18 ) ];
 [ g18, s3a ]
 gap> TailMap( C18 );
@@ -814,8 +781,7 @@ gap> Size2d( C18 );
 [ 18, 6 ]
 gap> StructureDescription( C18 );
 [ "(C3 x C3) : C2", "S3" ]
-]]>
-</Example>
+]]></Example>
 
 The next four subsections contain some more constructors for 
 cat<M>^1</M>-groups. 
@@ -834,8 +800,7 @@ module on <M>G</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C4 := DiagonalCat1Group( [ (1,2,3), (2,3,4) ] );;
 gap> SetName( Source(C4), "a4a4" );  SetName( Range(C4_, "a4d" );
 gap> Display( C4 );
@@ -856,8 +821,7 @@ Cat1-group [a4a4=>a4d] :-
   [ ( 9,10,11), (10,11,12) ]
 : kernel embedding maps generators of kernel to:
   [ (5,6,7), (6,7,8) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="TransposeCat1Group"
@@ -872,8 +836,7 @@ The <C>TransposeIsomorphism</C> gives the isomorphism between the two.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> R4 := TransposeCat1Group( C4 );
 [a4a4=>a4d]
 gap> Boundary( R4 );
@@ -886,8 +849,7 @@ gap> MappingGeneratorsImages( TransposeIsomorphism(C4) );
 [ [ [ (1,2,3), (2,3,4), (5,6,7), (6,7,8) ], 
       [ (5,6,7), (6,7,8), (1,2,3), (2,3,4) ] ], 
   [ [ (9,10,11), (10,11,12) ], [ (9,10,11), (10,11,12) ] ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="Cat1GroupByPeifferQuotient"
@@ -901,8 +863,7 @@ and <M>P = [a4,a4]=k4</M>, so that <M>G/P = s4/k4 \cong s3</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> s4 := Group( (1,2,3), (3,4) );;  SetName( s4, "s4" ); 
 gap> h := GroupHomomorphismByImages( s4, s4, [(1,2,3),(3,4)], [(),(3,4)] );;
 gap> c2 := Image( h );;  SetName( c2, "c2" );
@@ -926,8 +887,7 @@ gap> StructureDescription( CXC2 );
 [ "S3", "C2" ]
 gap> IsomorphismCat1Groups( C2, CXC2 );
 [[Group( [ f1, f2 ] ) => c2] => [(..|X..) => c2]]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SubCat1Group"
@@ -943,14 +903,12 @@ are the appropriate restrictions of those of <M>C_1</M>.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> s3 := Subgroup( s4, [(2,3),(3,4)] );; 
 gap> res := DoublyRestrictedMapping( h, s3, s3 );; 
 gap> S := PreCat1Group( res, res );
 [Group( [ (2,3), (3,4) ] )=>Group( [ (3,4), (3,4) ] )]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="DirectProduct"
@@ -970,8 +928,7 @@ constructed above.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C418 := DirectProduct( C4, C18 );
 [(a4a4xg18)=>(a4d x s3a)]
 gap> infoC418 := DirectProductInfo( C418 );
@@ -990,8 +947,7 @@ gap> h418 := HeadMap( C418 );
 gap> e418 := RangeEmbedding( C418 );
 [ (1,2,3), (2,3,4), (5,6,7), (6,7) ] -> [ (1,2,3)(5,6,7), (2,3,4)(6,7,8), 
   (9,10,11), (10,11)(13,14) ]
-]]>
-</Example>
+]]></Example>
 
 </Section> 
 
@@ -1018,8 +974,7 @@ are identity mappings.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G8 := SmallGroup( 288, 956 );  SetName( G8, "G8" );
 <pc group of size 288 with 7 generators>
 gap> d12 := DihedralGroup( 12 );  SetName( d12, "d12" );
@@ -1042,8 +997,7 @@ gap> KnownPropertiesOfObject( C8 );
   "IsGeneratorsOfSemigroup", "IsPreCat1Domain", "IsPc2DimensionalGroup", 
   "IsPreXMod", "IsPreCat1Group", "IsCat1Group", "IsIdentityPreCat1Group", 
   "IsPreCat1GroupWithIdentityEmbedding" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsPreCat1GroupWithIdentityEmbedding"
@@ -1068,8 +1022,7 @@ between them. (See the next chapter for mappings of cat<M>^1</M>-groups.)
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G5 := Group( (1,2,3,4,5) );;                                             
 gap> t := GroupHomomorphismByImages( G5, G5, [(1,2,3,4,5)], [(1,5,4,3,2)] );;
 gap> PC5 := PreCat1GroupByTailHeadEmbedding( t, t, t );
@@ -1081,8 +1034,7 @@ gap> IPC5 := IsomorphicPreCat1GroupWithIdentityEmbedding( PC5 );
 gap> TailMap( IPC5 ); RangeEmbedding( IPC5 );
 [ (1,2,3,4,5) ] -> [ (1,2,3,4,5) ]
 [ (1,2,3,4,5) ] -> [ (1,2,3,4,5) ]
-]]>
-</Example>
+]]></Example>
 
 
 
@@ -1147,8 +1099,7 @@ returns a record with fields
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> X8 := XModOfCat1Group( C8 );;
 gap> Display( X8 );
 
@@ -1169,8 +1120,7 @@ Crossed module X([G8=>d12]) :-
 gap> StructureDescription(X8);
 [ "D24", "D12" ]
 
-]]>
-</Example>
+]]></Example>
 </Section>
 
 
@@ -1212,8 +1162,7 @@ representatives of the isomorphism classes of these cat<M>^1</M>-groups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> d12 := DihedralGroup( IsPermGroup, 12 );  SetName( d12, "d12" );
 Group([ (1,2,3,4,5,6), (2,6)(3,5) ])
 gap> c2 := Subgroup( d12, [ (1,6)(2,5)(3,4) ] );; 
@@ -1221,8 +1170,7 @@ gap> AllCat1GroupsWithImageNumber( d12, c2 );
 1
 gap> L12 := AllCat1GroupsWithImage( d12, c2 );
 [ [d12=>Group( [ (), (1,6)(2,5)(3,4) ] )] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="AllCat1GroupsMatrix"
@@ -1250,8 +1198,7 @@ number <M>n</M> of these cat<M>^1</M>-groups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> qd16 := SmallGroup( 16, 8 );; 
 gap> AllCat1GroupsMatrix( qd16 );;                 
 number of idempotent endomorphisms found = 10
@@ -1267,8 +1214,7 @@ number of additional pre-cat1-groups found = 9
 .......21.
 .......11.
 .........2
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="AllCat1GroupsIterator"
@@ -1289,8 +1235,7 @@ of the isomorphism classes of these subgroups.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> iter := AllCat1GroupsIterator( d12 );;
 gap> AllCat1GroupsNumber( d12 );
 12
@@ -1299,8 +1244,7 @@ gap> iso12 := AllCat1GroupsUpToIsomorphism( d12 );
   [d12=>Group( [ (1,4)(2,5)(3,6), (2,6)(3,5) ] )], 
   [d12=>Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )], 
   [d12=>Group( [ (1,2,3,4,5,6), (2,6)(3,5) ] )] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="CatnGroupNumbers"
@@ -1328,12 +1272,10 @@ of cat<M>^2</M>-group calculations.
 </Description> 
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> CatnGroupNumbers( d12 );
 rec( cat1 := 12, idem := 21, iso1 := 4, siso := 4, symm := 12 )
-]]>
-</Example>
+]]></Example>
 </Section> 
 
 
@@ -1387,8 +1329,7 @@ is given by the normal subgroup <C>c3</C> of <C>s3</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> L18 := Cat1Select( 18 ); 
 Usage:  Cat1Select( size, gpnum, num );  where gpnum <= 5
 fail
@@ -1437,8 +1378,7 @@ Crossed module :-
   These 2 automorphisms generate the group of automorphisms.
 : associated cat1-group is [Group( [ (4,5,6), (1,2,3), (2,3)(5,6) 
  ] ) => Group( [ (4,5,6), (2,3)(5,6) ] )]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -1464,14 +1404,12 @@ to the source and range of the 2d-group.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IdGroup( X8 );
 [ [ 24, 6 ], [ 12, 4 ] ]
 gap> StructureDescription( C8 );
 [ "(S3 x D24) : C2", "D12" ]
-]]>
-</Example>
+]]></Example>
 
 There are also a number of functions which test for sub-structures.
 <P/>
@@ -1495,14 +1433,12 @@ The examples refer back to sub-2d-groups created in sections
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsSubXMod( X4, Y4 );
 true
 gap> IsSubPreCat1Group( C, S );
 true
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -1546,8 +1482,7 @@ and <M>(12,13) \to ( 2, 3)( 4, 6)( 7, 8) \to (12,13)</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> s3 := Group( (11,12), (12,13) );; 
 gap> c3c3 := Group( [ (14,15,16), (17,18,19) ] );; 
 gap> bdy3 := GroupHomomorphismByImages( c3c3, s3, 
@@ -1568,8 +1503,7 @@ groupoid with 2 pieces:
 [ (12,13)>-(2,3)(4,6)(7,8)->(12,13) ] ), [ (12,13), (11,12), (11,13) ], 
 [ (12,13)>-(2,3)(5,6)(8,9)->(12,13), (12,13)>-(2,3)(5,6)(7,9)->(11,13), 
   (12,13)>-(2,3)(5,6)(7,8)->(11,12) ] >
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="GroupGroupoidElement" 
@@ -1608,8 +1542,7 @@ and show that <M>g_1*g_2</M> and <M>e_1*e_2</M> give very different results.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> piece2 := Pieces( gpd33 )[2];;
 gap> obs2 := piece2!.objects; 
 [ (12,13), (11,12), (11,13) ]
@@ -1634,8 +1567,7 @@ gap> GeneratorsOfGroup( obgp )[1];
 gap> Homset( gpd33, (11,12), (11,13) );
 <homset (11,12) -> (11,13) with head group Group( 
 [ (11,12)>-( 1, 2)( 4, 6)( 7, 8)->(11,12) ] )>
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
