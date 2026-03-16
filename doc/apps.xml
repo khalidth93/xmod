@@ -99,8 +99,7 @@ For each <M>LX</M> calculated, the <Ref Meth="IdGroup" Label="for 2d-groups"/> i
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> SetName( k8, "k8" ); 
 gap> Y8 := XModByAutomorphismGroup( k8 );; 
 gap> X8 := Image( IsomorphismPerm2DimensionalGroup( Y8 ) );;
@@ -126,8 +125,7 @@ gap> LX8 := AllLoopsXMod( X8 );;
 gap> iso := IsomorphismGroups( Range( LX ), Range( LX8[2] ) );;
 gap> iso = fail;
 false
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

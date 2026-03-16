@@ -39,14 +39,12 @@ In the example <C>C12</C> is the converted form of <C>H12</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> H12 := SmallCatOneGroup( 12, 4, 3 );
 Cat-1-group with underlying group Group( [ f1, f2, f3 ] ) . 
 gap> C12 := SmallCat1Group( 12, 4, 3 );
 [Group( [ f1, f2, f3 ] )=>Group( [ f1, f2, <identity> of ... ] )]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CatOneGroupToXMod"
@@ -59,16 +57,14 @@ These two functions convert between the two alternative implementations.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C12 := CatOneGroupToXMod( H12 );    
 [Group( [ f1, f2, f3 ] )=>Group( [ f1, f2, <identity> of ... ] )]
 gap> C18 := Cat1Select( 18, 4, 3 );
 [(C3 x C3) : C2=>Group( [ f1, <identity> of ..., f3 ] )]
 gap> H18 := Cat1GroupToHAP( C18 ); 
 Cat-1-group with underlying group (C3 x C3) : C2 . 
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="IdCat1Group"
@@ -82,14 +78,12 @@ structure on the <C>SmallGroup(n,i)</C>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IdCatOneGroup( H18 ); 
 [ 18, 4, 4 ]
 gap> IdCat1Group( C18 ); 
 [ 18, 4, 4 ]
-]]>
-</Example>
+]]></Example>
 
 </Section> 
 

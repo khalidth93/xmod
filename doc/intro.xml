@@ -40,11 +40,9 @@ crossed modules of groupoids.
 </List>
 
 It is loaded with the command
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> LoadPackage( "xmod" ); 
-]]>
-</Example>
+]]></Example>
 <P/>
 The term crossed module was introduced by J. H. C. Whitehead in 
 <Cite Key="W2" />, <Cite Key="W1" />.
@@ -164,33 +162,27 @@ By default, the <C>InfoLevel</C> of <C>InfoXMod</C> is <C>0</C>;
 progressively more information is supplied by raising
 the <C>InfoLevel</C> to <C>1</C>, <C>2</C> and <C>3</C>.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> SetInfoLevel( InfoXMod, 1); #sets the InfoXMod level to 1
-]]>
-</Example>
+]]></Example>
 <P/> 
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
 The <Code>html</Code> versions, with or without MathJax, 
 should be rebuilt as follows: 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ReadPackage( "xmod, "makedoc.g" ); 
-]]>
-</Example>
+]]></Example>
 <P/>
 It is possible to check that the package has been installed correctly
 by running the test files: 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ReadPackage( "xmod", "tst/testall.g" );
 #I  Testing .../pkg/xmod/tst/gp2obj.tst 
 ... 
-]]>
-</Example>
+]]></Example>
 <P/>
 Additional information can be found on the
 <E>Computational Higher-dimensional Discrete Algebra</E> website at: 

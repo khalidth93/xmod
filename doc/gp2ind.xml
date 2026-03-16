@@ -51,8 +51,7 @@ which includes the embedding morphisms of the two factors.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> q8 := Group( (1,2,3,4)(5,8,7,6), (1,5,3,7)(2,6,4,8) );;
 gap> XAq8 := XModByAutomorphismGroup( q8 );;
 gap> s4b := Range( XAq8 );; 
@@ -73,8 +72,7 @@ gap> SetName( XZ8, "XZ8" );
 gap> info := CoproductInfo( XZ8 );
 rec( embeddings := [ [XAq8 => XZ8], [Z8 => XZ8] ], xmods := [ XAq8, Z8 ] )
 gap> SetInfoLevel( InfoXMod, 0 ); 
-]]>
-</Example>
+]]></Example>
 
 Given a list of more than two crossed modules with a common range <M>R</M>, 
 then an iterated coproduct is formed: 
@@ -87,8 +85,7 @@ The <C>embeddings</C> field of the <C>CoproductInfo</C> of the resulting
 crossed module <M>\calY</M> contains the <M>n</M> morphisms 
 <M>\epsilon_i : \calX_i \to \calY (1 \leqslant i \leqslant n)</M>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Y := CoproductXMod( [ XAq8, XAq8, Z8, Z8 ] );
 [Group( [ f1, f2, f3, f4, f5, f6, f7, f8 ] )->s4b]
 gap> StructureDescription( Y );          
@@ -101,8 +98,7 @@ rec(
       [Z8 => [Group( [ f1, f2, f3, f4, f5, f6, f7, f8 ] ) -> s4b]], 
       [Z8 => [Group( [ f1, f2, f3, f4, f5, f6, f7, f8 ] ) -> s4b]] ], 
   xmods := [ XAq8, XAq8, Z8, Z8 ] )
-]]>
-</Example>
+]]></Example>
 
 
 </Section>
@@ -173,8 +169,7 @@ The induced crossed module is isomorphic to <M>(d_{12} \to s_3)</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> a := (6,7,8,9)(10,11,12);;  b := (7,9)(11,12);;
 gap> d24 := Group( [ a, b ] );;
 gap> SetName( d24, "d24" );
@@ -207,16 +202,14 @@ Crossed module [d24/ker->s3] :-
   These 2 automorphisms generate the group of automorphisms.
 gap> morX24 := MorphismOfInducedXMod( iX24 );
 [[d24->d12] => [d24/ker->s3]]
-]]>
-</Example>
+]]></Example>
 
 For a second, injective example we take for <M>\calX</M> 
 the result <C>iX24</C> of the previous example
 and for <M>\iota</M> an inclusion of <M>s_3</M> in <M>s_4</M>. 
 The resulting source group has size <M>96</M>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> g := (16,17,18);;  h := (16,17,18,19);;
 gap> s4 := Group( [ g, h ] );;
 gap> SetName( s4, "s4" );;
@@ -228,23 +221,20 @@ gap> Size2d( iiX24 );
 [ 96, 24 ]
 gap> StructureDescription( iiX24 );
 [ "C2 x GL(2,3)", "S4" ]
-]]>
-</Example>
+]]></Example>
 
 For a third example we combine the previous two examples by 
 taking for <M>\iota</M> the more general case <C>alpha = theta*iota</C>.
 The resulting <C>jX24</C> is isomorphic to, 
 but not identical to, <C>iiX24</C>.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> alpha := CompositionMapping( iota, epi );
 [ (1,2)(3,4,5), (4,5) ] -> [ (17,18,19), (18,19) ]
 gap> jX24 := InducedXMod( X24, alpha );;
 gap> StructureDescription( jX24 );
 [ "C2 x GL(2,3)", "S4" ]
-]]>
-</Example>
+]]></Example>
 
 For a fourth example we use the version <C>InducedXMod(Q,R,S)</C> 
 of this global function, with a normal inclusion crossed module 
@@ -252,8 +242,7 @@ of this global function, with a normal inclusion crossed module
 We take <M>(c_6 \to d_{12})</M> as <M>\calX</M> 
 and the inclusion of <M>d_{12}</M> in <M>d_{24}</M> as <M>\iota</M>.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 ## Section 7.2.1 : Example 4 
 gap> d12b := Subgroup( d24, [ a^2, b ] );;
 gap> SetName( d12b, "d12b" ); 
@@ -277,8 +266,8 @@ Morphism of crossed modules :-
   [ ( 4, 9, 6, 5, 8, 7)(10,15,12,11,14,13) ]
 : Range Homomorphism maps range generators to:
   [ ( 6, 8)( 7, 9)(10,12,11), ( 7, 9)(11,12) ]
-#]]>
-</Example>
+#
+]]></Example>
 
 <ManSection>
    <Oper Name="AllInducedXMods"
@@ -290,16 +279,14 @@ where <C>R</C> runs over all conjugacy classes of subgroups of <C>Q</C>
 and <C>S</C> runs over all non-trivial normal subgroups of <C>R</C>.
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> all := AllInducedXMods( q8 );;
 gap> L := List( all, x -> Source( x ) );;
 gap> Sort( L, function(g,h) return Size(g) < Size(h); end );;
 gap> List( L, x -> StructureDescription( x ) );
 [ "1", "1", "1", "1", "C2 x C2", "C2 x C2", "C2 x C2", "C4 x C4", "C4 x C4", 
   "C4 x C4", "C2 x C2 x C2 x C2" ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

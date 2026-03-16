@@ -114,8 +114,7 @@ and the other <M>3</M> elements to <M>(1,2,3)(4,6,5)</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> g18 := Group( (1,2,3), (4,5,6), (2,3)(5,6) );;
 gap> SetName( g18, "g18" );
 gap> gen18 := GeneratorsOfGroup( g18 );;
@@ -146,8 +145,7 @@ gap> UpImagePositions( chi1 );
 [ 1, 1, 1, 2, 2, 2 ]
 gap> DerivationImage( chi1, (2,3)(4,5) );
 (1,2,3)(4,6,5)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="PrincipalDerivation" 
@@ -158,12 +156,10 @@ is the derivation <M>\eta_s : R \to S,\; r \mapsto (s^{-1})^rs</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> eta := PrincipalDerivation( X3, (1,2,3)(4,6,5) );
 DerivationByImages( s3, c3, [ (4,5,6), (2,3)(5,6) ], [ (), (1,3,2)(4,5,6) ] )
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="SectionByHomomorphism"
@@ -203,8 +199,7 @@ using <Ref Oper="SectionByDerivation"/>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> hom2 := GroupHomomorphismByImages( s3, g18, [ (4,5,6), (2,3)(5,6) ], 
 > [ (1,3,2)(4,6,5), (1,2)(4,6) ] );;
 gap> xi2 := SectionByHomomorphism( C3, hom2 );                                 
@@ -224,8 +219,7 @@ DerivationByImages( s3, c3, [ (4,5,6), (2,3)(5,6) ],
 gap> xi1 := SectionByDerivation( chi1 );
 SectionByHomomorphism( s3, g18, [ (4,5,6), (2,3)(5,6) ], 
 [ (1,2,3), (1,2)(4,6) ] )
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="IdentityDerivation"
@@ -240,15 +234,13 @@ considered as a section.
 </ManSection>
 <P/>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IdentityDerivation( X3 ); 
 DerivationByImages( s3, c3, [ (4,5,6), (2,3)(5,6) ], [ (), () ] )
 gap> IdentitySection( C3 );     
 SectionByHomomorphism( s3, g18, [ (4,5,6), (2,3)(5,6) ], 
 [ (4,5,6), (2,3)(5,6) ] )
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="WhiteheadProduct"
@@ -267,8 +259,7 @@ equal to the <Ref Oper="IdentityDerivation"/>.
 </ManSection>
 <P/>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> chi12 := WhiteheadProduct( chi1, chi2 );
 DerivationByImages( s3, c3, [ (4,5,6), (2,3)(5,6) ], [ (1,3,2)(4,5,6), () ] )
 gap> xi12 := WhiteheadProduct( xi1, xi2 );
@@ -278,8 +269,7 @@ gap> xi12 = SectionByDerivation( chi12 );
 true 
 gap> [ WhiteheadOrder( chi2 ), WhiteheadOrder( xi2 ) ];
 [ 2, 2 ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -331,8 +321,7 @@ under the <M>i</M>-th derivation of the <M>j</M>-th element of <M>R</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> all3 := AllDerivations( X3 );
 monoid of derivations with images list:
 [ (), () ]
@@ -356,8 +345,7 @@ gap> Perform( ImagesTable( all3 ), Display );
 [ 1, 2, 3, 1, 2, 3 ]
 [ 1, 2, 3, 3, 1, 2 ]
 [ 1, 2, 3, 2, 3, 1 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="WhiteheadMonoidTable"
@@ -374,8 +362,7 @@ Using the rows of the table as transformations, we may construct the
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> wmt3 := WhiteheadMonoidTable( X3 );; 
 gap> Perform( wmt3, Display );
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
@@ -393,8 +380,7 @@ gap> GeneratorsOfMonoid( wtm3 );
 [ Transformation( [ 2, 3, 1, 5, 6, 4, 8, 9, 7 ] ), 
   Transformation( [ 4, 6, 5, 1, 3, 2, 7, 9, 8 ] ), 
   Transformation( [ 7, 7, 7, 7, 7, 7, 7, 7, 7 ] ) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="WhiteheadPermGroup"
@@ -430,8 +416,7 @@ we obtain the <C>WhiteheadGroupIsomorphism</C> whose image is the
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> reg3 := RegularDerivations( X3 );
 monoid of derivations with images list:
 [ (), () ]
@@ -460,8 +445,7 @@ gap> WhiteheadRegularGroup( X3 );
 Group([ (1,2,3)(4,5,6), (1,4)(2,6)(3,5) ])
 gap> MappingGeneratorsImages( WhiteheadGroupIsomorphism( X3 ) );
 [ [ (1,2,3)(4,5,6), (1,4)(2,6)(3,5) ], [ (1,2,3), (1,2) ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="WhiteheadGroupElement"
@@ -499,8 +483,7 @@ to the Whitehead group of <M>\calX</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> PDX3 := PrincipalDerivations( X3 );
 monoid of derivations with images list:
 [ (), () ]
@@ -510,8 +493,7 @@ gap> PDSX3 := PrincipalDerivationSubgroup( X3 );
 Group([ (1,2,3) ])
 gap> Whom3 := WhiteheadHomomorphism( X3 );
 [ (1,2,3)(4,6,5) ] -> [ (1,2,3) ]
-]]>
-</Example>
+]]></Example>
 
 <B>Exercise:</B><M>~</M>
 Use the two crossed module axioms to show that
@@ -541,12 +523,10 @@ We may verify that <M>\sigma_{\chi}</M> is a homomorphism by:
 </ManSection>
 <P/>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> sigma2 := SourceEndomorphism( chi2 );
 [ (1,2,3)(4,6,5) ] -> [ (1,3,2)(4,5,6) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="RangeEndomorphism"
@@ -559,12 +539,10 @@ determines an endomorphism
 </ManSection>
 <P/>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> rho2 := RangeEndomorphism( chi2 );
 [ (4,5,6), (2,3)(5,6) ] -> [ (4,6,5), (2,3)(4,6) ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="Object2dEndomorphism"
@@ -578,8 +556,7 @@ the previous two operations.
 </ManSection>
 <P/>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> alpha2 := Object2dEndomorphism( chi2 );;
 gap> Display( alpha2 );
 Morphism of crossed modules :- 
@@ -591,8 +568,7 @@ Morphism of crossed modules :-
   [ (1,3,2)(4,5,6) ]
 : Range Homomorphism maps range generators to:
   [ (4,6,5), (2,3)(4,6) ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -610,8 +586,7 @@ operation for derivations and then converting the result to sections.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> AllSections( C3 );
 monoid of sections with images list:
 [ (4,5,6), (2,3)(5,6) ]
@@ -631,8 +606,7 @@ monoid of sections with images list:
 [ (1,3,2)(4,6,5), (2,3)(5,6) ]
 [ (1,3,2)(4,6,5), (1,3)(4,5) ]
 [ (1,3,2)(4,6,5), (1,2)(4,6) ]
-]]>
-</Example>
+]]></Example>
 
 
 </Section>

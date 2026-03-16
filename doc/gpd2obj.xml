@@ -65,8 +65,7 @@ and the example <C>X4</C> in <Ref Oper="NormalSubXMods"/>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> CX4 := SinglePiecePreXModWithObjects( X4, [-6,-5,-4], false );
 single piece precrossed module with objects
   source groupoid:
@@ -85,8 +84,7 @@ single piece precrossed module with objects
 gap> SetName( DX4, "DX4" );
 gap> Da4 := Source( DX4 );;  SetName( Da4, "Da4" );
 gap> Ds4 := Range( DX4 );;  SetName( Ds4, "Ds4" );
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsXModWithObjects" 
@@ -101,14 +99,12 @@ The precrossed module <C>CX4</C> belongs to the category
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Set( KnownPropertiesOfObject( CX4 ) );
 [ "CanEasilyCompareElements", "CanEasilySortElements", "IsAssociative", 
   "IsDuplicateFree", "IsGeneratorsOfSemigroup", "IsPreXModWithObjects", 
   "IsSinglePieceDomain", "IsXModWithObjects" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsPermPreXModWithObjects" 
@@ -124,16 +120,14 @@ they were constructed.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IsPermPreXModWithObjects( CX4 );
 true
 gap> IsPcPreXModWithObjects( CX4 );
 false
 gap> IsFpPreXModWithObjects( CX4 );
 false
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Root2dGroup" 
@@ -159,8 +153,7 @@ where the group is the automorphism group of the range groupoid.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Root2dGroup( CX4 );
 [a4->s4]
 gap> actC := XModAction( CX4 );;
@@ -190,8 +183,7 @@ gap> s2 := Arrow( Da4, (1,2,4), -8, -8 );;
 gap> ##  calculate s2^r2 
 gap> ims2 := ImageElmXModAction( DX4, s2, r2 );
 [(1,2,3) : -9 -> -9]
-]]>
-</Example>
+]]></Example>
 
 There is much more to be done with these constructions. 
 

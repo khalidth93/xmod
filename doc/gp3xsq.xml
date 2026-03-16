@@ -72,8 +72,7 @@ a function <M>\boxtimes : S_{\{1\}} \times S_{\{2\}} \to S_{[2]}</M>.
 </List>
 
 Here is a picture of the situation:
-<Display>
-<![CDATA[
+<Display><![CDATA[
 \vcenter{\xymatrix{
        &   &  S_{[2]} \ar[rr]^{\ddot{\partial}_1} \ar[dd]_{\ddot{\partial}_2} 
               && S_{\{2\}} \ar[dd]^{\dot{\partial}_2} && 
@@ -221,8 +220,7 @@ The result is a pre-crossed square which is <E>not</E> a crossed square.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> b := (2,4);; c := (1,2)(3,4);; p := (1,2,3,4);; 
 gap> d8 := Group( b, c );; 
 gap> SetName( d8, "d8" );; 
@@ -252,8 +250,7 @@ gap> Display( PXS );
     down = [Group( [ (1,2)(3,4) ] ) -> Group( () )]
 gap> IsCrossedSquare( PXS ); 
 false
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Size3d"
@@ -266,12 +263,10 @@ of the four groups at the corners of the square.
 </Description>
 </ManSection>
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Size3d( PXS ); 
 [ 2, 2, 2, 1 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CrossedSquareByNormalSubgroups"
@@ -295,8 +290,7 @@ This construction is implemented as
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> d20 := DihedralGroup( IsPermGroup, 20 );;
 gap> gend20 := GeneratorsOfGroup( d20 ); 
 [ (1,2,3,4,5,6,7,8,9,10), (2,10)(3,9)(4,8)(5,7) ]
@@ -314,8 +308,7 @@ gap> XSconj := CrossedSquareByNormalSubgroups( c5d, d10a, d10b, d20 );
 gap> xpc := CrossedPairing( XSconj );;
 gap> xpc( p12, p2 );
 (1,3,5,7,9)(2,4,6,8,10)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CrossedSquareByNormalSubXMod"
@@ -335,8 +328,7 @@ The example constructs the same crossed square as in the previous subsection.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> X20 := XModByNormalSubgroup( d20, d10a );; 
 gap> X10 := XModByNormalSubgroup( d10b, c5d );; 
 gap> ok := IsNormalSub2DimensionalDomain( X20, X10 ); 
@@ -348,8 +340,7 @@ gap> XS20 := CrossedSquareByNormalSubXMod( X20, X10 );
 gap> xp20 := CrossedPairing( XS20 );; 
 gap> xp20( p1^2, p2 );
 (1,7,3,9,5)(2,8,4,10,6)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="ActorCrossedSquare"
@@ -372,8 +363,7 @@ in section <Ref Sect="cat2-xsq"/>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> XSact := ActorCrossedSquare( X20 );
 crossed square with crossed modules:
       up = Whitehead[d10a->d20]
@@ -387,8 +377,7 @@ gap> StructureDescription( W );
 gap> xpa := CrossedPairing( XSact );;
 gap> xpa( p1, (2,3,5,4) );
 (1,7,3,9,5)(2,8,4,10,6)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CrossedSquareByAutomorphismGroup"
@@ -406,8 +395,7 @@ The crossed pairing is gived by <M>\iota_g \boxtimes \iota_h = [g,h]</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> AXS20 := CrossedSquareByAutomorphismGroup( d20 );
 [      d20 -> Inn(d20) ]
 [     |          |     ]
@@ -421,8 +409,7 @@ gap> genI20 := GeneratorsOfGroup( I20 );
 gap> xpi := CrossedPairing( AXS20 );;
 gap> xpi( genI20[1], genI20[2] );
 (1,9,7,5,3)(2,10,8,6,4)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="CrossedSquareByPullback"
@@ -448,8 +435,7 @@ The second example below uses the central extension crossed module
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> dn := Down2DimensionalGroup( XSconj );;
 gap> rt := Right2DimensionalGroup( XSconj );;
 gap> XSP := CrossedSquareByPullback( dn, rt ); 
@@ -464,8 +450,7 @@ gap> StructureDescription( XS12 );
 gap> xp12 := CrossedPairing( XS12 );; 
 gap> xp12( (1,2,3,4,5,6), (2,6)(3,5) );
 (1,5,3)(2,6,4)(7,11,9)(8,12,10)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="CrossedSquareByXModSplitting"
@@ -483,8 +468,7 @@ and the crossed pairing is given by commutators of preimages.
 <P/>
 A particular case is when <M>S</M> is an <M>R</M>-module <M>A</M> 
 and <M>\partial</M> is the zero map. 
-<Display>
-<![CDATA[
+<Display><![CDATA[
 \vcenter{\xymatrix{
        &   &  S \ar[rr]^{\partial'} \ar[dd]_{\partial'} \ar[rrdd]^{\partial}
               && Q \ar[dd]^{\iota} && 
@@ -500,8 +484,7 @@ and <M>\partial</M> is the zero map.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> k4 := Group( (1,2), (3,4) );;
 gap> AX4 := XModByAutomorphismGroup( k4 );;
 gap> X4 := Image( IsomorphismPermObject( AX4 ) );;
@@ -519,8 +502,7 @@ gap> XSS20;
 gap> xps := CrossedPairing( XSS20 );;
 gap> xps( p1^2, p2 );
 (1,7,3,9,5)(2,8,4,10,6)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Func Name="CrossedSquare"
@@ -550,15 +532,13 @@ when <C>X1</C> is normal in <C>X0</C> .
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> diag := Diagonal2DimensionalGroup( AXS20 );
 [d20->Aut(d20)]
 gap> XSdiag := CrossedSquare( diag );;      
 gap> StructureDescription( XSdiag );  
 [ "D20", "D10", "D10", "C2 x (C5 : C4)" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="Transpose3DimensionalGroup" 
@@ -576,15 +556,13 @@ The crossed pairing is given by
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> XStrans := Transpose3DimensionalGroup( XSconj ); 
 [  c5d -> d10b ]
 [   |      |   ]
 [ d10a -> d20  ]
 
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -620,8 +598,7 @@ constructed in section <Ref Sect="sect-more-xmod-ops" />.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> pos7 := Position( ids, [ [12,2], [24,5] ] );;
 gap> Xn7 := nsx[pos7];; 
 gap> IdGroup( Xn7 );
@@ -631,8 +608,7 @@ gap> IdGroup( CentreXMod( Xn7 ) );
 gap> CQXn7 := CentralQuotient( Xn7 );;
 gap> StructureDescription( CQXn7 );
 [ "C12", "C3", "C4 x S3", "S3" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsCrossedSquare"
@@ -680,8 +656,7 @@ The diagonal crossed module <M>(L \to P)</M> is an additional attribute.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Up2DimensionalGroup( XSconj );
 [c5d->d10a]
 gap> Right2DimensionalGroup( XSact );
@@ -695,8 +670,7 @@ gap> act1 := ImageElm( cross1, gensb[1] );;
 gap> gensa[2]; ImageElm( act1, gensa[2] );
 (2,10)(3,9)(4,8)(5,7)
 (1,5)(2,4)(6,10)(7,9)
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Prop Name="IsSymmetric3DimensionalGroup"
@@ -729,17 +703,14 @@ Crossed pairings have been implemented as functions of two variables,
 </ManSection>
 <P/>
 The first example shows the crossed pairing in the crossed square <C>XSconj</C>. 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> xp := CrossedPairing( XSconj );;
 gap> xp( (1,6)(2,5)(3,4)(7,10)(8,9), (1,5)(2,4)(6,9)(7,8) );
 (1,7,8,5,3)(2,9,10,6,4)
-]]>
-</Example>
+]]></Example>
 
 The second example shows how to construct a crossed pairing.
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> F := FreeGroup(1);;
 gap> x := GeneratorsOfGroup(F)[1];;
 gap> z := GroupHomomorphismByImages( F, F, [x], [x^0] );;
@@ -757,8 +728,7 @@ gap> X1 := XModByBoundaryAndAction( id, act );;
 gap> XSF := PreCrossedSquareByPreXMods( X0, X0, X1, X1, X0, h );; 
 gap> IsCrossedSquare( XSF ); 
 true
-]]>
-</Example>
+]]></Example>
 </Section>
 
 
@@ -783,8 +753,7 @@ satisfactorily, then a crossed square is produced.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Display( XS20 ); 
 [  c5d -> d10a ]
 [   |      |   ]
@@ -808,8 +777,7 @@ crossed square with crossed modules:
 gap> sxp := CrossedPairing( sub20 );;
 gap> sxp( p5, p2 );
 ()
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="TrivialSub3DimensionalGroup"
@@ -823,14 +791,12 @@ A special case of the previous operation is when all the subgroups are trivial.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> TC2ab := TrivialSubCat2Group( C2ab );
 (pre-)cat2-group with generating (pre-)cat1-groups:
 1 : [Group( () ) => Group( () )]
 2 : [Group( () ) => Group( () )]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -911,8 +877,7 @@ required checks.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ad20 := GroupHomomorphismByImages( d20, d20, [p1,p2], [p1,p2^p1] );;
 gap> ad10a := GroupHomomorphismByImages( d10a, d10a, [p1^2,p2], [p1^2,p2^p1] );;
 gap> ad10b := GroupHomomorphismByImages( d10b, d10b, [p1^2,p12], [p1^2,p12^p1] );;
@@ -955,8 +920,7 @@ gap> Set( kpo );
   "IsAutomorphismHigherDimensionalDomain", "IsCrossedSquareMorphism", 
   "IsEndomorphismHigherDimensionalDomain", "IsInjective", 
   "IsPreCrossedSquareMorphism", "IsSingleValued", "IsSurjective", "IsTotal" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="InclusionMorphismHigherDimensionalDomains" 

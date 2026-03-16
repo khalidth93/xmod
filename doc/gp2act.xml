@@ -46,8 +46,7 @@ constructed in section <Ref Sect="DerivationByImages" />.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> APX3 := AutomorphismPermGroup( X3 );
 Group([ (5,7,6), (1,2)(3,4)(6,7) ])
 gap> Size( APX3 );
@@ -67,8 +66,7 @@ Morphism of crossed modules :-
   [ (1,3,2)(4,5,6) ]
 : Range Homomorphism maps range generators to:
   [ (4,6,5), (2,3)(4,5) ]
-]]>
-</Example>
+]]></Example>
 
 The automorphisms <M>( \gamma, \rho )</M> of a cat<M>^1</M>-group 
 <M>\calC</M> form a group <M>\Aut(\calC)</M> of cat<M>^1</M>-group
@@ -81,8 +79,7 @@ using the function <Ref Oper="PermAutomorphismAs2dGroupMorphism"/>.
 The example below uses the cat<M>^1</M>-group <Code>C3</Code> 
 constructed in section <Ref Oper="DerivationByImages" />.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> APC3 := AutomorphismPermGroup( C3 );
 Group([ (1,3,2)(4,6,5)(7,9,8)(12,13,14), (2,3)(4,7)(5,9)(6,8)(10,11)(13,14) ])
 gap> IdGroup( APC3 );
@@ -90,8 +87,7 @@ gap> IdGroup( APC3 );
 gap> a := GeneratorsOfGroup( APC3 )[1];;
 gap> m := PermAutomorphismAs2dGroupMorphism( C3, a );
 [[g18 => s3] => [g18 => s3]]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="InnerAutomorphismPermGroup"
@@ -186,8 +182,7 @@ along the top-left to bottom-right diagonal.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> WGX3 := WhiteheadPermGroup( X3 );
 Group([ (1,2,3), (1,2) ])
 gap> APX3 := AutomorphismPermGroup( X3 );
@@ -244,8 +239,7 @@ Crossed module Actor[c3->s3] :-
   (5,7,6) --> { source gens --> [ (1,2,3), (2,3) ] }
   (1,2)(3,4)(6,7) --> { source gens --> [ (1,3,2), (1,2) ] }
   These 2 automorphisms generate the group of automorphisms.
-]]>
-</Example>
+]]></Example>
 
 The main methods for these operations are written for 
 permutation crossed modules. 
@@ -253,8 +247,7 @@ For other crossed modules an isomorphism to a permutation crossed module
 is found first, and then the main method is applied to the image. 
 In the example the crossed module <C>XAq8</C> 
 is the automorphism crossed module of the quaternion group. 
-<Example> 
-<![CDATA[
+<Example> <![CDATA[
 gap> q8 := Group( (1,2,3,4)(5,8,7,6), (1,5,3,7)(2,6,4,8) );;
 gap> SetName( q8, "q8" );
 gap> XAq8 := XModByAutomorphismGroup( q8 );; 
@@ -266,8 +259,7 @@ gap> StructureDescription( NorrieXMod( XAq8 ) );
 [ "S4", "S4" ]
 gap> StructureDescription( ActorXMod( XAq8 ) ); 
 [ "C2 x C2 x C2", "S4" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="XModCentre"
@@ -305,8 +297,7 @@ so that <M>r</M> is also in the centre of <M>R</M>.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IMX3 := InnerMorphism( X3 );; 
 gap> Display( IMX3 );
 Morphism of crossed modules :- 
@@ -337,8 +328,7 @@ Crossed module InnerActor[c3->s3] :-
   (5,6,7) --> { source gens --> [ (1,2,3) ] }
   (1,2)(3,4)(6,7) --> { source gens --> [ (1,3,2) ] }
   These 2 automorphisms generate the group of automorphisms.
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -358,8 +348,7 @@ A similar procedure is followed for the inner actor.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> C3;
 [g18 => s3]
 gap> AC3 := ActorCat1Group( C3 );
@@ -389,8 +378,7 @@ gap> IAC3 := InnerActorCat1Group( C3 );
 cat1(InnerActor[c3->s3])
 gap> StructureDescription( IAC3 );
 [ "(C3 x C3) : C2", "S3" ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Func Name="Actor"
@@ -405,8 +393,7 @@ as appropriate.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c4q := Subgroup( q8, [ (1,2,3,4)(5,8,7,6) ] );;
 gap> SetName( c4q, "c4q" );                         
 gap> Xc4q := XModByNormalSubgroup( q8, c4q );;      
@@ -418,8 +405,7 @@ gap> IAXc4q := InnerActor( Xc4q );
 InnerActor[c4q->q8]
 gap> StructureDescription( IAXc4q );
 [ "C2", "C2 x C2" ]
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
