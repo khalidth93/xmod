@@ -108,8 +108,7 @@ A similar argument applies to cat<M>^1</M>-groups.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> InnerAutomorphismPermGroup( X3 ) = APX3;  
 true
 gap> Display( X12 );
@@ -133,8 +132,7 @@ gap> [ StructureDescription( APX12 ), StructureDescription( IAPX12 ) ];
 gap> InnerAutomorphismPermGroup( C3 );
 Group([ (1,3,2)(4,6,5)(7,9,8)(12,13,14), (2,3)(4,7)(5,9)(6,8)(10,11)(13,14) ])
 
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Attr Name="WhiteheadXMod"
