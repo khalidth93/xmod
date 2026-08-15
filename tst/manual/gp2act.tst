@@ -56,10 +56,9 @@ Morphism of crossed modules :-
 : Range Homomorphism maps range generators to:
   [ (4,6,5), (2,3)(4,5) ]
 
-gap> APC3 := AutomorphismPermGroup( C3 );
-Group([ (1,3,2)(4,6,5)(7,9,8)(12,13,14), (2,3)(4,7)(5,9)(6,8)(10,11)(13,14) ])
-gap> IdGroup( APC3 );
-[ 6, 1 ]
+gap> APC3 := AutomorphismPermGroup( C3 );;
+gap> StructureDescription( APC3 );
+"S3"
 gap> a := GeneratorsOfGroup( APC3 )[1];;
 gap> m := PermAutomorphismAs2dGroupMorphism( C3, a );
 [[g18 => s3] => [g18 => s3]]
@@ -79,15 +78,13 @@ Crossed module X12 :-
   (7,8,9) --> { source gens --> [ (1,2,3,4,5,6), (1,3)(4,6) ] }
   (8,9) --> { source gens --> [ (1,6,5,4,3,2), (2,6)(3,5) ] }
   These 2 automorphisms generate the group of automorphisms.
-gap> APX12 := AutomorphismPermGroup( X12 );     
-Group([ (1,4,6)(2,5,8)(9,10,11), (1,5)(2,6)(4,8), (1,6)(2,5)(3,7)(9,11) ])
-gap> IAPX12 := InnerAutomorphismPermGroup( X12 );        
-Group([ (1,4,6)(2,5,8)(9,10,11), (2,8)(3,7)(4,6)(10,11) ])
+gap> APX12 := AutomorphismPermGroup( X12 );;
+gap> IAPX12 := InnerAutomorphismPermGroup( X12 );;
 gap> [ StructureDescription( APX12 ), StructureDescription( IAPX12 ) ];
 [ "D12", "S3" ]
 
-gap> InnerAutomorphismPermGroup( C3 );
-Group([ (1,3,2)(4,6,5)(7,9,8)(12,13,14), (2,3)(4,7)(5,9)(6,8)(10,11)(13,14) ])
+gap> StructureDescription( InnerAutomorphismPermGroup( C3 ) );
+"S3"
 
 ## Section 6.1.3
 gap> X3;

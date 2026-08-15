@@ -802,7 +802,7 @@ module on <M>G</M>.
 <P/>
 <Example><![CDATA[
 gap> C4 := DiagonalCat1Group( [ (1,2,3), (2,3,4) ] );;
-gap> SetName( Source(C4), "a4a4" );  SetName( Range(C4_, "a4d" );
+gap> SetName( Source(C4), "a4a4" );  SetName( Range(C4), "a4d" );
 gap> Display( C4 );
 Cat1-group [a4a4=>a4d] :- 
 : Source group a4a4 has generators:

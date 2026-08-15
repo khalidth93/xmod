@@ -42,6 +42,7 @@ crossed modules of groupoids.
 It is loaded with the command
 <Example><![CDATA[
 gap> LoadPackage( "xmod" ); 
+true
 ]]></Example>
 <P/>
 The term crossed module was introduced by J. H. C. Whitehead in 
