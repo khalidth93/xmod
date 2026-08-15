@@ -257,12 +257,9 @@ subsection <Ref Oper="XModByTrivialAction"/>.
 gap> X8ab := DirectProduct( X8a, X8b );
 [[<-1>->q8]x[<i>->q8]]
 gap> infoX8ab := DirectProductInfo( X8ab );
-rec( 
-  embeddings := [ [[<-1>->q8] => [<-1>x<i>->q8xq8]], 
-      [[<i>->q8] => [<-1>x<i>->q8xq8]] ], objects := [ [<-1>->q8], [<i>->q8] ]
-    , 
-  projections := [ [[<-1>x<i>->q8xq8] => [<-1>->q8]], 
-      [[<-1>x<i>->q8xq8] => [<i>->q8]] ] )
+rec( embeddings := [ [[<-1>->q8] => [..]], [[<i>->q8] => [..]] ],
+  objects := [ [<-1>->q8], [<i>->q8] ],
+  projections := [ [[..] => [<-1>->q8]], [[..] => [<i>->q8]] ] )
 gap> DirectProduct( X8a, X8b, X12 );
 [[[<-1>->q8]x[<i>->q8]]x[d12->s3]]
 ]]></Example>
@@ -868,7 +865,7 @@ gap> s4 := Group( (1,2,3), (3,4) );;  SetName( s4, "s4" );
 gap> h := GroupHomomorphismByImages( s4, s4, [(1,2,3),(3,4)], [(),(3,4)] );;
 gap> c2 := Image( h );;  SetName( c2, "c2" );
 gap> C := PreCat1Group( h, h );
-[s4=>c2]
+[s4 => c2]
 gap> P := PeifferSubgroupPreCat1Group( C );
 Group([ (1,3)(2,4), (1,2)(3,4) ])
 gap> C2 := Cat1GroupByPeifferQuotient( C );
@@ -904,8 +901,8 @@ are the appropriate restrictions of those of <M>C_1</M>.
 </Description>
 </ManSection>
 <Example><![CDATA[
-gap> s3 := Subgroup( s4, [(2,3),(3,4)] );; 
-gap> res := DoublyRestrictedMapping( h, s3, s3 );; 
+gap> s3 := Subgroup( s4, [(2,3),(3,4)] );;
+gap> res := GeneralRestrictedMapping( h, s3, s3 );;
 gap> S := PreCat1Group( res, res );
 [Group( [ (2,3), (3,4) ] )=>Group( [ (3,4), (3,4) ] )]
 ]]></Example>
@@ -993,9 +990,9 @@ gap> C8 := PreCat1GroupByTailHeadEmbedding( t8, h8, e8 );
 gap> IsCat1Group( C8 );
 true
 gap> KnownPropertiesOfObject( C8 );
-[ "CanEasilyCompareElements", "CanEasilySortElements", "IsDuplicateFree", 
-  "IsGeneratorsOfSemigroup", "IsPreCat1Domain", "IsPc2DimensionalGroup", 
-  "IsPreXMod", "IsPreCat1Group", "IsCat1Group", "IsIdentityPreCat1Group", 
+[ "CanEasilyCompareElements", "CanEasilySortElements", "IsDuplicateFree",
+  "IsAssociative", "IsGeneratorsOfSemigroup", "IsPreCat1Domain",
+  "IsPc2DimensionalGroup", "IsPreCat1Group", "IsCat1Group",
   "IsPreCat1GroupWithIdentityEmbedding" ]
 ]]></Example>
 
@@ -1102,8 +1099,7 @@ returns a record with fields
 <Example><![CDATA[
 gap> X8 := XModOfCat1Group( C8 );;
 gap> Display( X8 );
-
-Crossed module X([G8=>d12]) :- 
+Crossed module xmod([G8 => d12]) :-
 : Source group has generators:
   [ f1, f4, f5, f7 ]
 : Range group d12 has generators:
@@ -1115,11 +1111,9 @@ Crossed module X([G8=>d12]) :-
   f2 --> { source gens --> [ f1*f5*f7^2, f4, f5, f7 ] }
   f3 --> { source gens --> [ f1*f7, f4, f5, f7 ] }
   These 3 automorphisms generate the group of automorphisms.
-: associated cat1-group is [G8=>d12]
-
+: associated cat1-group is [G8 => d12]
 gap> StructureDescription(X8);
 [ "D24", "D12" ]
-
 ]]></Example>
 </Section>
 
@@ -1331,11 +1325,11 @@ is given by the normal subgroup <C>c3</C> of <C>s3</C>.
 <P/>
 <Example><![CDATA[
 gap> L18 := Cat1Select( 18 ); 
-Usage:  Cat1Select( size, gpnum, num );  where gpnum <= 5
+#I  Usage:  Cat1Select( size, gpnum, num );  where gpnum <= 5
 fail
 gap> ## check the number of cat1-structures on the fourth group of order 18 
 gap> Cat1Select( 18, 4 );
-Usage:  Cat1Select( size, gpnum, num );  where num <= 4
+#I  Usage:  Cat1Select( size, gpnum, num );  where num <= 4
 fail
 gap> ## select the second of these cat1-structures 
 gap> B18 := Cat1Select( 18, 4, 2 );
@@ -1362,7 +1356,7 @@ Cat1-group :-
 : kernel embedding maps generators of kernel to:
   [ (1,2,3) ]
 
-gap> convert the result to the associated permutation crossed module 
+gap> # convert the result to the associated permutation crossed module
 gap> Y18 := XModOfCat1Group( PB18 );; 
 gap> Display( Y18 ); 
 Crossed module :- 
@@ -1563,10 +1557,10 @@ gap> e2^-1;
 (11,13)>-(1,3)(4,6)(7,9)->(12,13)
 gap> obgp := ObjectGroup( gpd33, (11,12) );;
 gap> GeneratorsOfGroup( obgp )[1];
-(11,13)>-( 1, 3)( 4, 6)( 7, 8)->(11,13)
+(11,13)>-(1,3)(5,6)(8,9)->(11,13)
 gap> Homset( gpd33, (11,12), (11,13) );
-<homset (11,12) -> (11,13) with head group Group( 
-[ (11,12)>-( 1, 2)( 4, 6)( 7, 8)->(11,12) ] )>
+<homset (11,12) -> (11,13) with head group Group(
+[ (11,12)>-(1,2)(5,6)(8,9)->(11,12), (11,12)>-(1,2)(4,5)(7,9)->(11,12) ] )>
 ]]></Example>
 
 </Section>

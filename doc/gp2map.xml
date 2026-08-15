@@ -116,10 +116,9 @@ the crossed module  <C>X5</C>  constructed in the previous chapter.
 <Index>display a 2d-mapping</Index>
 <Index>order of a 2d-automorphism</Index>
 <Example><![CDATA[
-gap> sigma5 := GroupHomomorphismByImages( c5, c5, [ (5,6,7,8,9) ]
-        [ (5,9,8,7,6) ] );;
-gap> rho5 := IdentityMapping( Range( X1 ) );
-IdentityMapping( PAut(c5) )
+gap> sigma5 := GroupHomomorphismByImages( c5, c5, [ (5,6,7,8,9) ],
+>       [ (5,9,8,7,6) ] );;
+gap> rho5 := IdentityMapping( Range( X1 ) );;
 gap> mor5 := XModMorphism( X5, X5, sigma5, rho5 );
 [[c5->Aut(c5))] => [c5->Aut(c5))]] 
 gap> Display( mor5 );
