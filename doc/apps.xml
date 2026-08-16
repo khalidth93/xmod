@@ -122,6 +122,7 @@ gap> LX8 := AllLoopsXMod( X8 );;
 #I  LoopsXMod with a = (2,4,6)(3,5,7),  IdGroup = [ [ 8, 5 ], [ 24, 13 ] ]
 #I  LoopsXMod with a = (1,2,4,3,6,7,5),  IdGroup = [ [ 8, 5 ], [ 56, 11 ] ]
 #I  LoopsXMod with a = (1,2,4,5,7,3,6),  IdGroup = [ [ 8, 5 ], [ 56, 11 ] ]
+gap> SetInfoLevel( InfoXMod, 0 );
 gap> iso := IsomorphismGroups( Range( LX ), Range( LX8[2] ) );;
 gap> iso = fail;
 false
