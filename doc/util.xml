@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  util.xml              XMod documentation            Chris Wensley  -->
 <!--                                                        & Murat Alp  -->
-<!--  Copyright (C) 2001-2020, Chris Wensley et al,                      --> 
+<!--  Copyright (C) 2001-2026, Chris Wensley et al,                      --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -36,7 +36,7 @@ were moved to the <Package>Utils</Package> package with version 2.56.
 <Index>restriction mapping</Index>
 
 The following two functions have been moved to the 
-<Package>gpd</Package> package, but are still documented here. 
+<Package>Groupoids</Package> package, but are still documented here. 
 
 <ManSection>
    <Oper Name="InclusionMappingGroups"
@@ -45,20 +45,21 @@ The following two functions have been moved to the
          Arg="G H" />
 <Description>
 This set of utilities concerns mappings.
-The map <C>incd8</C> is the inclusion of <C>d8</C> in <C>d16</C> 
-used in Section <Ref Sect="sect-oper-mor" />. 
+<C>InclusionMappingGroups(G,H)</C> returns the inclusion of <C>H</C> in
+<C>G</C>. 
 <C>MappingToOne(G,H)</C> maps the whole of <M>G</M> to the identity element 
 in <M>H</M>. 
 </Description>
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> Print( incd8, "\n" );
-[ (11,13,15,17)(12,14,16,18), (11,18)(12,17)(13,16)(14,15) ] ->
-[ (11,13,15,17)(12,14,16,18), (11,18)(12,17)(13,16)(14,15) ]
-gap> imd8 := Image( incd8 );;
-gap> MappingToOne( c4, imd8 );
-[ (11,13,15,17)(12,14,16,18) ] -> [ () ]
+gap> s4 := Group( (1,2,3,4), (3,4) );;
+gap> s3 := Subgroup( s4, [ (2,3), (3,4) ] );;
+gap> InclusionMappingGroups( s4, s3 );
+[ (2,3), (3,4) ] -> [ (2,3), (3,4) ]
+gap> c5 := Group( (5,6,7,8,9) );;
+gap> MappingToOne( s4, c5 ); 
+[ (1,2,3,4), (3,4) ] -> [ (), () ]
 ]]></Example>
 
 <ManSection>

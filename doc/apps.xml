@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  apps.xml              XMod documentation            Chris Wensley  -->
 <!--                                                        & Murat Alp  -->
-<!--  Copyright (C) 2001-2022, Chris Wensley et al,                      --> 
+<!--  Copyright (C) 2001-2026, Chris Wensley et al,                      --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -100,11 +100,12 @@ For each <M>LX</M> calculated, the <Ref Meth="IdGroup" Label="for 2d-groups"/> i
 </ManSection>
 <P/>
 <Example><![CDATA[
+gap> k8 := Group( (3,4), (5,6), (7,8) );; 
 gap> SetName( k8, "k8" ); 
 gap> Y8 := XModByAutomorphismGroup( k8 );; 
 gap> X8 := Image( IsomorphismPerm2DimensionalGroup( Y8 ) );;
 gap> SetName( X8, "X8" );
-gap> Print( "X8: ", Size( X8 ), " : ", StructureDescription( X8 ), "\n" );  
+gap> Print( "X8: ", Size2d( X8 ), " : ", StructureDescription( X8 ), "\n" );  
 X8: [ 8, 168 ] : [ "C2 x C2 x C2", "PSL(3,2)" ]
 gap> classes := LoopClasses( X8 );;
 gap> List( classes, c -> Length(c) );

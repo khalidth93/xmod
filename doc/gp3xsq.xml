@@ -792,10 +792,12 @@ A special case of the previous operation is when all the subgroups are trivial.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> TC2ab := TrivialSubCat2Group( C2ab );
-(pre-)cat2-group with generating (pre-)cat1-groups:
-1 : [Group( () ) => Group( () )]
-2 : [Group( () ) => Group( () )]
+gap> TXS20 := TrivialSubCrossedSquare( XS20 );
+crossed square with crossed modules:
+      up = [Group( () ) -> Group( () )]
+    left = [Group( () ) -> Group( () )]
+   right = [Group( () ) -> Group( () )]
+    down = [Group( () ) -> Group( () )]
 ]]></Example>
 
 </Section>

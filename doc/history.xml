@@ -250,6 +250,10 @@ are equivalent.
 <Item>
 Added the operation <C>WhiteheadGroupElement</C> for a derivation.
 </Item>
+<Item>
+Replaced the test files in the tst/manual/ folder by examples extracted from
+the manual using AutoDoc: <C>[xmod01.tst,...,xmod14.tst]</C>.
+</Item>
 </List>
 </Subsection>
 
@@ -257,7 +261,7 @@ Added the operation <C>WhiteheadGroupElement</C> for a derivation.
 
 
 
-<Section><Heading>What needs doing next?</Heading>
+<Section><Heading>What might be done next?</Heading>
 
 <List>
 <Item>

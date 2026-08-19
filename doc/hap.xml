@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  hap.xml               XMod documentation            Chris Wensley  -->
 <!--                                                        & Murat Alp  -->
-<!--  Copyright (C) 2001-2020, Chris Wensley et al,                      --> 
+<!--  Copyright (C) 2001-2026, Chris Wensley et al,                      --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -61,7 +61,7 @@ These two functions convert between the two alternative implementations.
 gap> C12 := CatOneGroupToXMod( H12 );    
 [Group( [ f1, f2, f3 ] )=>Group( [ f1, f2, <identity> of ... ] )]
 gap> C18 := Cat1Select( 18, 4, 3 );
-[(C3 x C3) : C2=>Group( [ f1, <identity> of ..., f3 ] )]
+[(C3 x C3) : C2 => Group( [ f1, <identity> of ..., <identity> of ... ] )]
 gap> H18 := Cat1GroupToHAP( C18 ); 
 Cat-1-group with underlying group (C3 x C3) : C2 . 
 ]]></Example>
@@ -80,9 +80,9 @@ structure on the <C>SmallGroup(n,i)</C>.
 <P/>
 <Example><![CDATA[
 gap> IdCatOneGroup( H18 ); 
-[ 18, 4, 4 ]
+[ 18, 4, 3 ]
 gap> IdCat1Group( C18 ); 
-[ 18, 4, 4 ]
+[ 18, 4, 3 ]
 ]]></Example>
 
 </Section> 

@@ -5,14 +5,14 @@
 ##
 ##  This file contains data on cat1-groups and crossed modules up to size 70 
 ##
-#Y  Copyright (C) 2001-2020, Chris Wensley et al,  
+#Y  Copyright (C) 2001-2026, Chris Wensley et al,  
 
 ##############################################################################
 ##
 ##  Cat1-structures for iso-classes of gps of size <= CAT1_LIST_MAX_SIZE
 ##
 
-Info( InfoXMod, 1, "Loading cat1-group data into CAT1_LIST" );
+Info( InfoXMod, 2, "Loading cat1-group data into CAT1_LIST" );
 
 CAT1_LIST := [
 [1,1,"1",[[]],[]],
