@@ -541,7 +541,11 @@ gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
 gap> names := [ [ "C2 x C2", "(D8 x D8) : C2" ],
 >               [ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ] ];;
-gap> StructureDescription( Y88 ) in names;
+gap> if ( StructureDescription( Y88 ) in names ) then
+>         Print( "true\n" );
+>    else
+>         Print( StructureDescription( Y88 ), "\n" );
+>    fi;
 true
 ]]></Example>
 
