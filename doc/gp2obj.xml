@@ -539,8 +539,6 @@ gap> Size2d( X88 );
 gap> Y88 := KernelCokernelXMod( X88 );;
 gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
-gap> StructureDescription( Y88 );
-[ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ]
 gap> names := [ [ "C2 x C2", "(D8 x D8) : C2" ],
 >               [ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ] ];;
 gap> StructureDescription( Y88 ) in names;

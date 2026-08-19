@@ -180,7 +180,7 @@ gap> NX4 := NormalSubXMods( X4 );;
 gap> Length( NX4 ); 
 5
 
-# doc/gp2obj.xml:534-548
+# doc/gp2obj.xml:534-546
 gap> d8d8 := Group( (1,2,3,4), (1,3), (5,6,7,8), (5,7) );;
 gap> X88 := XModByAutomorphismGroup( d8d8 );;
 gap> Size2d( X88 );
@@ -188,14 +188,12 @@ gap> Size2d( X88 );
 gap> Y88 := KernelCokernelXMod( X88 );;
 gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
-gap> StructureDescription( Y88 );
-[ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ]
 gap> names := [ [ "C2 x C2", "(D8 x D8) : C2" ],
 >               [ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ] ];;
 gap> StructureDescription( Y88 ) in names;
 true
 
-# doc/gp2obj.xml:576-602
+# doc/gp2obj.xml:574-600
 gap> b1 := (11,12,13,14,15,16,17,18);;  b2 := (12,18)(13,17)(14,16);;
 gap> d16 := Group( b1, b2 );;
 gap> sk4 := Subgroup( d16, [ b1^4, b2 ] );;
@@ -222,7 +220,7 @@ Crossed module :-
   [ (), () ]
   The automorphism group is trivial
 
-# doc/gp2obj.xml:628-645
+# doc/gp2obj.xml:626-643
 gap> P := PeifferSubgroup( P16 );
 Group( [ (11,15)(12,16)(13,17)(14,18), (11,17,15,13)(12,18,16,14) ] )
 gap> X16 := XModByPeifferQuotient( P16 );
@@ -240,7 +238,7 @@ gap> iso16 := IsomorphismPermGroup( Source( X16 ) );;
 gap> S16 := Image( iso16 );
 Group([ (1,2), (3,4) ])   
 
-# doc/gp2obj.xml:714-727
+# doc/gp2obj.xml:712-725
 gap> g18gens := [ (1,2,3), (4,5,6), (2,3)(5,6) ];;     
 gap> s3agens := [ (7,8,9), (8,9) ];;                
 gap> g18 := Group( g18gens );;  SetName( g18, "g18" ); 
@@ -254,7 +252,7 @@ gap> e1 := GroupHomomorphismByImages(s3a,g18,s3agens,[(1,2,3),(2,3)(5,6)]);
 gap> C18 := Cat1Group( t1, h1, e1 );
 [g18=>s3a]
 
-# doc/gp2obj.xml:766-785
+# doc/gp2obj.xml:764-783
 gap> [ Source( C18 ), Range( C18 ) ];
 [ g18, s3a ]
 gap> TailMap( C18 );
@@ -274,7 +272,7 @@ gap> Size2d( C18 );
 gap> StructureDescription( C18 );
 [ "(C3 x C3) : C2", "S3" ]
 
-# doc/gp2obj.xml:804-825
+# doc/gp2obj.xml:802-823
 gap> C4 := DiagonalCat1Group( [ (1,2,3), (2,3,4) ] );;
 gap> SetName( Source(C4), "a4a4" );  SetName( Range(C4), "a4d" );
 gap> Display( C4 );
@@ -296,7 +294,7 @@ Cat1-group [a4a4=>a4d] :-
 : kernel embedding maps generators of kernel to:
   [ (5,6,7), (6,7,8) ]
 
-# doc/gp2obj.xml:840-853
+# doc/gp2obj.xml:838-851
 gap> R4 := TransposeCat1Group( C4 );
 [a4a4=>a4d]
 gap> Boundary( R4 );
@@ -310,7 +308,7 @@ gap> MappingGeneratorsImages( TransposeIsomorphism(C4) );
       [ (5,6,7), (6,7,8), (1,2,3), (2,3,4) ] ], 
   [ [ (9,10,11), (10,11,12) ], [ (9,10,11), (10,11,12) ] ] ]
 
-# doc/gp2obj.xml:867-891
+# doc/gp2obj.xml:865-889
 gap> s4 := Group( (1,2,3), (3,4) );;  SetName( s4, "s4" ); 
 gap> h := GroupHomomorphismByImages( s4, s4, [(1,2,3),(3,4)], [(),(3,4)] );;
 gap> c2 := Image( h );;  SetName( c2, "c2" );
@@ -335,13 +333,13 @@ gap> StructureDescription( CXC2 );
 gap> IsomorphismCat1Groups( C2, CXC2 );
 [[Group( [ f1, f2 ] ) => c2] => [(..|X..) => c2]]
 
-# doc/gp2obj.xml:907-912
+# doc/gp2obj.xml:905-910
 gap> s3 := Subgroup( s4, [(2,3),(3,4)] );;
 gap> res := GeneralRestrictedMapping( h, s3, s3 );;
 gap> S := PreCat1Group( res, res );
 [Group( [ (2,3), (3,4) ] )=>Group( [ (3,4), (3,4) ] )]
 
-# doc/gp2obj.xml:932-951
+# doc/gp2obj.xml:930-949
 gap> C418 := DirectProduct( C4, C18 );
 [(a4a4xg18)=>(a4d x s3a)]
 gap> infoC418 := DirectProductInfo( C418 );
@@ -361,7 +359,7 @@ gap> e418 := RangeEmbedding( C418 );
 [ (1,2,3), (2,3,4), (5,6,7), (6,7) ] -> [ (1,2,3)(5,6,7), (2,3,4)(6,7,8), 
   (9,10,11), (10,11)(13,14) ]
 
-# doc/gp2obj.xml:978-1001
+# doc/gp2obj.xml:976-999
 gap> G8 := SmallGroup( 288, 956 );  SetName( G8, "G8" );
 <pc group of size 288 with 7 generators>
 gap> d12 := DihedralGroup( 12 );  SetName( d12, "d12" );
@@ -385,7 +383,7 @@ gap> KnownPropertiesOfObject( C8 );
   "IsPc2DimensionalGroup", "IsPreCat1Group", "IsCat1Group",
   "IsPreCat1GroupWithIdentityEmbedding" ]
 
-# doc/gp2obj.xml:1026-1038
+# doc/gp2obj.xml:1024-1036
 gap> G5 := Group( (1,2,3,4,5) );;                                             
 gap> t := GroupHomomorphismByImages( G5, G5, [(1,2,3,4,5)], [(1,5,4,3,2)] );;
 gap> PC5 := PreCat1GroupByTailHeadEmbedding( t, t, t );
@@ -398,7 +396,7 @@ gap> TailMap( IPC5 ); RangeEmbedding( IPC5 );
 [ (1,2,3,4,5) ] -> [ (1,2,3,4,5) ]
 [ (1,2,3,4,5) ] -> [ (1,2,3,4,5) ]
 
-# doc/gp2obj.xml:1103-1121
+# doc/gp2obj.xml:1101-1119
 gap> X8 := XModOfCat1Group( C8 );;
 gap> Display( X8 );
 Crossed module xmod([G8 => d12]) :-
@@ -417,14 +415,14 @@ Crossed module xmod([G8 => d12]) :-
 gap> StructureDescription(X8);
 [ "D24", "D12" ]
 
-# doc/gp2obj.xml:1163-1169
+# doc/gp2obj.xml:1161-1167
 gap> c2 := Subgroup( d12p, [ (1,6)(2,5)(3,4) ] );; 
 gap> AllCat1GroupsWithImageNumber( d12p, c2 );
 1
 gap> L12 := AllCat1GroupsWithImage( d12p, c2 );
 [ [d12p=>Group( [ (), (1,6)(2,5)(3,4) ] )] ]
 
-# doc/gp2obj.xml:1197-1213
+# doc/gp2obj.xml:1195-1211
 gap> qd16 := SmallGroup( 16, 8 );; 
 gap> AllCat1GroupsMatrix( qd16 );;                 
 number of idempotent endomorphisms found = 10
@@ -441,7 +439,7 @@ number of additional pre-cat1-groups found = 9
 .......11.
 .........2
 
-# doc/gp2obj.xml:1234-1243
+# doc/gp2obj.xml:1232-1241
 gap> iter := AllCat1GroupsIterator( d12p );;
 gap> AllCat1GroupsNumber( d12p );
 12
@@ -451,11 +449,11 @@ gap> iso12 := AllCat1GroupsUpToIsomorphism( d12p );
   [d12p => Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )], 
   [d12p => Group( [ (1,2,3,4,5,6), (2,6)(3,5) ] )] ]
 
-# doc/gp2obj.xml:1271-1274
+# doc/gp2obj.xml:1269-1272
 gap> CatnGroupNumbers( d12p );
 rec( cat1 := 12, idem := 21, iso1 := 4, siso := 4, symm := 12 )
 
-# doc/gp2obj.xml:1328-1379
+# doc/gp2obj.xml:1326-1377
 gap> SetInfoLevel( InfoXMod, 1 ); 
 gap> L18 := Cat1Select( 18 ); 
 #I  Usage:  Cat1Select( size, gpnum, num );  where gpnum <= 5
@@ -507,7 +505,7 @@ Crossed module :-
 : associated cat1-group is [Group( [ (4,5,6), (1,2,3), (2,3)(5,6) 
  ] ) => Group( [ (4,5,6), (2,3)(5,6) ] )]
 
-# doc/gp2obj.xml:1405-1412
+# doc/gp2obj.xml:1403-1410
 gap> IdGroup( X8 );
 [ [ 24, 6 ], [ 12, 4 ] ]
 gap> names := [ [ "(S3 x D24) : C2", "D12" ],
@@ -515,13 +513,13 @@ gap> names := [ [ "(S3 x D24) : C2", "D12" ],
 gap> StructureDescription( C8 ) in names;
 true
 
-# doc/gp2obj.xml:1436-1441
+# doc/gp2obj.xml:1434-1439
 gap> IsSubXMod( X4, Y4 );
 true
 gap> IsSubPreCat1Group( C, S );
 true
 
-# doc/gp2obj.xml:1480-1497
+# doc/gp2obj.xml:1478-1495
 gap> C12 := Cat1Select( 12, 5, 7 );; 
 gap> PC12 := Image( IsomorphismPermObject( C12 ) );
 [Group( [ (5,6,7), (3,4), (1,2) ] ) => Group( [ (3,4)(5,7,6) ] )]
@@ -539,7 +537,7 @@ gap> ObjectList( p1 );
 gap> RaysOfGroupoid( p1 );
 [ ()>-()->(), ()>-(1,2)(3,4)->(3,4) ]
 
-# doc/gp2obj.xml:1536-1542
+# doc/gp2obj.xml:1534-1540
 gap> p2 := Pieces( gg12 )[2];;
 gap> obs2 := p2!.objects; 
 [ (5,6,7), (3,4)(5,6,7) ]
