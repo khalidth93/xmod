@@ -2,7 +2,7 @@
 ##
 #W  testing.g                   XMod Package                     Chris Wensley
 ##   
-#Y  Copyright (C) 1999-2020, Chris Wensley et al 
+#Y  Copyright (C) 1999-2026, Chris Wensley et al 
 
 LoadPackage( "xmod" );
 
@@ -10,9 +10,9 @@ pkgname := "xmod";
 pkgdir := DirectoriesPackageLibrary( pkgname, "tst/manual" ); 
 ## testing manual examples 
 testmanual := 
-    [ "gp2obj.tst",    "gp2map.tst",    "gp2up.tst",   "gp2act.tst", 
-      "gp2ind.tst",    "isoclinic.tst", "gp3xsq.tst",  "gp3cat2.tst",  
-      "gp4objmap.tst", "gpd2obj.tst",   "util.tst",    "apps.tst" ];
+   [ "xmod01.tst",  "xmod02.tst",  "xmod03.tst",  "xmod04.tst",  "xmod05.tst", 
+     "xmod06.tst",  "xmod07.tst",  "xmod08.tst",  "xmod09.tst",  "xmod10.tst",
+     "xmod11.tst",  "xmod12.tst",  "xmod13.tst",  "xmod14.tst" ];
 testresult := true;
 for ff in testmanual do
     fn := Filename( pkgdir, ff );

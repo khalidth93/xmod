@@ -559,6 +559,7 @@ end );
 ##
 #M  IdGroup . . . . . . . . . . . . . . . . . . . for a 2Dimensional-domain
 #M  StructureDescription  . . . . . . . . . . . . for a 2Dimensional-domain
+#M  NrMovedPoints . . . . . . . . . . . . . . . . for a 2Dimensional-domain
 ##
 InstallOtherMethod( IdGroup, "method for a 2d-domain", true, 
     [ Is2DimensionalDomain ], 0,
@@ -571,6 +572,12 @@ InstallOtherMethod( StructureDescription, "method for a 2d-domain", true,
 function( dom )
     return [ StructureDescription( Source(dom) ), 
              StructureDescription( Range(dom) ) ]; 
+end ); 
+
+InstallOtherMethod( NrMovedPoints, "method for a 2d-domain", true, 
+    [ Is2DimensionalDomain ], 0,
+function( dom )
+    return [ NrMovedPoints( Source(dom) ), NrMovedPoints( Range(dom) ) ]; 
 end ); 
 
 #############################################################################

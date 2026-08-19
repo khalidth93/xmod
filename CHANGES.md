@@ -1,10 +1,14 @@
 ## CHANGES to the 'XMod' package
 
+## 2.98 -> 2.99 (19/08/2026)
+ * (19/08/26) Replaced the test files in the tst/manual/ folder by examples
+              extracted using AutoDoc: [xmod01.tst,...,xmod14.tst].
+
 ## 2.97 -> 2.98 (12/03/2026)
  * (10/03/26) Documented InnerAutomorphismXMod and InnerAutomorphismCat1Group
               and added InnerAutomorphismPermGroup for a 2d-group
  * (11/03/26) Verified that CentreXMod and XModCentre are equivalent
-              Added WhiteheadGroupElement for a derivations
+              Added WhiteheadGroupElement for a derivation
 
 ## 2.96 -> 2.97 (10/12/2025)
  * (04/12/25) remove various unused categories etc in dom2dnd.gd

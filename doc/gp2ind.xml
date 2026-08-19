@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  gp2ind.xml            XMod documentation            Chris Wensley  -->
 <!--                                                        & Murat Alp  -->
-<!--  Copyright (C) 2001-2025, Chris Wensley et al,                      --> 
+<!--  Copyright (C) 2001-2026, Chris Wensley et al,                      --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -248,11 +248,11 @@ gap> d12b := Subgroup( d24, [ a^2, b ] );;
 gap> SetName( d12b, "d12b" ); 
 gap> c6b := Subgroup( d12b, [ a^2 ] );; 
 gap> SetName( c6b, "c6b" );  
-gap> X12 := InducedXMod( d24, d12b, c6b );
+gap> Z12 := InducedXMod( d24, d12b, c6b );
 i*([c6b->d12b])
-gap> StructureDescription( X12 );
+gap> StructureDescription( Z12 );
 [ "C6 x C6", "D24" ]
-gap> Display( MorphismOfInducedXMod( X12 ) );
+gap> Display( MorphismOfInducedXMod( Z12 ) );
 Morphism of crossed modules :- 
 : Source = [c6b->d12b] with generating sets:
   [ ( 6, 8)( 7, 9)(10,12,11) ]
@@ -266,7 +266,6 @@ Morphism of crossed modules :-
   [ ( 4, 9, 6, 5, 8, 7)(10,15,12,11,14,13) ]
 : Range Homomorphism maps range generators to:
   [ ( 6, 8)( 7, 9)(10,12,11), ( 7, 9)(11,12) ]
-#
 ]]></Example>
 
 <ManSection>

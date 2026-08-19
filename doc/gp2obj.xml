@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  gp2obj.xml            XMod documentation            Chris Wensley  -->
 <!--                                                        & Murat Alp  -->
-<!--  Copyright (C) 1996-2025, Chris Wensley et al,                      --> 
+<!--  Copyright (C) 1996-2026, Chris Wensley et al,                      --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -160,17 +160,17 @@ with <M>\partial^{-1}r</M>.
 </ManSection>
 <Example><![CDATA[
 gap> gen12 := [ (1,2,3,4,5,6), (2,6)(3,5) ];;
-gap> d12 := Group( gen12 );;                  
+gap> d12p := Group( gen12 );;                  
 gap> gen6 := [ (7,8,9), (8,9) ];;
 gap> s3 := Group( gen6 );;
-gap> SetName( d12, "d12" );  SetName( s3, "s3" ); 
-gap> pr12 := GroupHomomorphismByImages( d12, s3, gen12, gen6 );;
-gap> Kernel( pr12 ) = Centre( d12 );
+gap> SetName( d12p, "d12p" );  SetName( s3, "s3" ); 
+gap> pr12 := GroupHomomorphismByImages( d12p, s3, gen12, gen6 );;
+gap> Kernel( pr12 ) = Centre( d12p );
 true
 gap> X12 := XModByCentralExtension( pr12 );;
 gap> Display( X12 );                         
-Crossed module [d12->s3] :- 
-: Source group d12 has generators:
+Crossed module [d12p->s3] :- 
+: Source group d12p has generators:
   [ (1,2,3,4,5,6), (2,6)(3,5) ]
 : Range group s3 has generators:
   [ (7,8,9), (8,9) ]
@@ -261,7 +261,7 @@ rec( embeddings := [ [[<-1>->q8] => [..]], [[<i>->q8] => [..]] ],
   objects := [ [<-1>->q8], [<i>->q8] ],
   projections := [ [[..] => [<-1>->q8]], [[..] => [<i>->q8]] ] )
 gap> DirectProduct( X8a, X8b, X12 );
-[[[<-1>->q8]x[<i>->q8]]x[d12->s3]]
+[[[<-1>->q8]x[<i>->q8]]x[d12p->s3]]
 ]]></Example>
 
 <ManSection>
@@ -297,7 +297,7 @@ subsection <Ref Oper="XModByCentralExtension"/>.
 </ManSection>
 <Example><![CDATA[
 gap> [ Source( X12 ), Range( X12 ) ];    
-[ d12, s3 ]
+[ d12p, s3 ]
 gap> Boundary( X12 ); 
 [ (1,2,3,4,5,6), (2,6)(3,5) ] -> [ (7,8,9), (8,9) ]
 gap> XModAction( X12 );
@@ -377,9 +377,9 @@ gap> ImageElmXModAction( X5, (5,7,9,6,8), a );
 (5,8,6,9,7)
 gap> Print( RepresentationsOfObject(X5), "\n" );
 [ "IsComponentObjectRep", "IsAttributeStoringRep", "IsPreXModObj" ]
-gap> Print( KnownAttributesOfObject(X5), "\n" );
-[ "Name", "Range", "Source", "IdGroup", "Boundary", "Size2d", "XModAction", 
-  "ExternalSetXMod", "HigherDimension" ]
+gap> Print( Set( KnownAttributesOfObject(X5) ), "\n" );
+[ "Boundary", "ExternalSetXMod", "HigherDimension", "IdGroup", "Name",
+  "Range", "Size2d", "Source", "XModAction" ]
 ]]></Example>
 
 </Section>
@@ -539,8 +539,15 @@ gap> Size2d( X88 );
 gap> Y88 := KernelCokernelXMod( X88 );;
 gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
-gap> StructureDescription( Y88 );
-[ "C2 x C2", "(D8 x D8) : C2" ] 
+gap> names := [ [ "C2 x C2", "(D8 x D8) : C2" ],
+>               [ "C2 x C2", "(C2 x D8) : D8" ],
+>               [ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ] ];;
+gap> if ( StructureDescription( Y88 ) in names ) then
+>         Print( "true\n" );
+>    else
+>         Print( StructureDescription( Y88 ), "\n" );
+>    fi;
+true
 ]]></Example>
 
 </Section>
@@ -1157,13 +1164,11 @@ representatives of the isomorphism classes of these cat<M>^1</M>-groups.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> d12 := DihedralGroup( IsPermGroup, 12 );  SetName( d12, "d12" );
-Group([ (1,2,3,4,5,6), (2,6)(3,5) ])
-gap> c2 := Subgroup( d12, [ (1,6)(2,5)(3,4) ] );; 
-gap> AllCat1GroupsWithImageNumber( d12, c2 );
+gap> c2 := Subgroup( d12p, [ (1,6)(2,5)(3,4) ] );; 
+gap> AllCat1GroupsWithImageNumber( d12p, c2 );
 1
-gap> L12 := AllCat1GroupsWithImage( d12, c2 );
-[ [d12=>Group( [ (), (1,6)(2,5)(3,4) ] )] ]
+gap> L12 := AllCat1GroupsWithImage( d12p, c2 );
+[ [d12p=>Group( [ (), (1,6)(2,5)(3,4) ] )] ]
 ]]></Example>
 
 <ManSection>
@@ -1230,14 +1235,14 @@ of the isomorphism classes of these subgroups.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> iter := AllCat1GroupsIterator( d12 );;
-gap> AllCat1GroupsNumber( d12 );
+gap> iter := AllCat1GroupsIterator( d12p );;
+gap> AllCat1GroupsNumber( d12p );
 12
-gap> iso12 := AllCat1GroupsUpToIsomorphism( d12 );
-[ [d12=>Group( [ (), (2,6)(3,5) ] )], 
-  [d12=>Group( [ (1,4)(2,5)(3,6), (2,6)(3,5) ] )], 
-  [d12=>Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )], 
-  [d12=>Group( [ (1,2,3,4,5,6), (2,6)(3,5) ] )] ]
+gap> iso12 := AllCat1GroupsUpToIsomorphism( d12p );
+[ [d12p => Group( [ (), (2,6)(3,5) ] )], 
+  [d12p => Group( [ (1,4)(2,5)(3,6), (2,6)(3,5) ] )], 
+  [d12p => Group( [ (1,5,3)(2,6,4), (2,6)(3,5) ] )], 
+  [d12p => Group( [ (1,2,3,4,5,6), (2,6)(3,5) ] )] ]
 ]]></Example>
 
 <ManSection>
@@ -1267,7 +1272,7 @@ of cat<M>^2</M>-group calculations.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> CatnGroupNumbers( d12 );
+gap> CatnGroupNumbers( d12p );
 rec( cat1 := 12, idem := 21, iso1 := 4, siso := 4, symm := 12 )
 ]]></Example>
 </Section> 
@@ -1324,10 +1329,11 @@ is given by the normal subgroup <C>c3</C> of <C>s3</C>.
 </ManSection>
 <P/>
 <Example><![CDATA[
+gap> SetInfoLevel( InfoXMod, 1 ); 
 gap> L18 := Cat1Select( 18 ); 
 #I  Usage:  Cat1Select( size, gpnum, num );  where gpnum <= 5
 fail
-gap> ## check the number of cat1-structures on the fourth group of order 18 
+gap> ## check the number of cat1-structures on the fourth group of order 18
 gap> Cat1Select( 18, 4 );
 #I  Usage:  Cat1Select( size, gpnum, num );  where num <= 4
 fail
@@ -1355,6 +1361,7 @@ Cat1-group :-
   [ () ]
 : kernel embedding maps generators of kernel to:
   [ (1,2,3) ]
+gap> SetInfoLevel( InfoXMod, 0 ); 
 
 gap> # convert the result to the associated permutation crossed module
 gap> Y18 := XModOfCat1Group( PB18 );; 
@@ -1401,8 +1408,10 @@ to the source and range of the 2d-group.
 <Example><![CDATA[
 gap> IdGroup( X8 );
 [ [ 24, 6 ], [ 12, 4 ] ]
-gap> StructureDescription( C8 );
-[ "(S3 x D24) : C2", "D12" ]
+gap> names := [ [ "(S3 x D24) : C2", "D12" ],
+>               [ "(C3 x C3) : ((C2 x C2 x C2) : (C2 x C2))", "D12" ] ];;
+gap> StructureDescription( C8 ) in names;
+true
 ]]></Example>
 
 There are also a number of functions which test for sub-structures.
@@ -1455,48 +1464,39 @@ The groupoid (partial) multiplication <M>*</M> on these arrows is defined by:
 <Display>
 (g_1 : r_1 \to r_2) * (g_2 : r_2 \to r_3) ~=~ (g_1(er_2^{-1})g_2 : r_1 \to r_3). 
 </Display> 
+The operation <C>GroupGroupoid</C> implements this construction. 
 <P/>
 <ManSection>
    <Attr Name="GroupGroupoid" 
          Arg="precat1" /> 
 <Description>
-The operation <C>GroupGroupoid</C> implements this construction. 
-In the example we start with a crossed module <M>(C_3^2 \to S_3)</M>, 
-form the associated cat<M>^1</M>-group 
-<M>(S_3 \ltimes C_3^2 \Rightarrow S_3)</M>,
-and then form the group groupoid <C>gpd33</C>. 
-Since the image of the boundary of the crossed module is <M>C_3</M>, 
-with index <M>2</M> in the range, the groupoid has two connected components, 
-and the root objects are <M>\{(),(12,13)\}</M>. 
-The size of the vertex groups is <M>|\ker t \cap \ker h| = 3</M>, 
-and the generators at the root objects are 
-<M>() \to ( 4, 5, 6)( 7, 9, 8) \to ()</M> 
-and <M>(12,13) \to ( 2, 3)( 4, 6)( 7, 8) \to (12,13)</M>. 
+In this example we start with a cat<M>^1</M>-group
+<M>(C_6 \times C2 \to C_6)</M>,
+and form the associated group groupoid <C>gg12</C>.
+The associated crossed module has the form <M>[C_2 \to C6]</M>, 
+and the boundary has index <M>3</M> in the range, 
+so the groupoid has three connected components, each with two objects.
 <P/> 
 </Description>
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> s3 := Group( (11,12), (12,13) );; 
-gap> c3c3 := Group( [ (14,15,16), (17,18,19) ] );; 
-gap> bdy3 := GroupHomomorphismByImages( c3c3, s3, 
->        [(14,15,16),(17,18,19)], [(11,12,13),(11,12,13)] );;
-gap> a := GroupHomomorphismByImages( c3c3, c3c3, 
->        [(14,15,16),(17,18,19)], [(14,16,15),(17,19,18)] );; 
-gap> aut := Group( [a] );; 
-gap> act := GroupHomomorphismByImages( s3, aut, [(11,12),(12,13)], [a,a] );;
-gap> X33 := XModByBoundaryAndAction( bdy3, act );; 
-gap> C33 := Cat1GroupOfXMod( X33 );; 
-gap> G33 := Source( C33 );; 
-gap> gpd33 := GroupGroupoid( C33 ); 
-groupoid with 2 pieces:
-1:  single piece groupoid with rays: < Group( [ ()>-(4,5,6)(7,9,8)->() ] ), 
-[ (), (11,12,13), (11,13,12) ], [ ()>-()->(), ()>-(7,8,9)->(11,12,13), 
-  ()>-(7,9,8)->(11,13,12) ] >
-2:  single piece groupoid with rays: < Group( 
-[ (12,13)>-(2,3)(4,6)(7,8)->(12,13) ] ), [ (12,13), (11,12), (11,13) ], 
-[ (12,13)>-(2,3)(5,6)(8,9)->(12,13), (12,13)>-(2,3)(5,6)(7,9)->(11,13), 
-  (12,13)>-(2,3)(5,6)(7,8)->(11,12) ] >
+gap> C12 := Cat1Select( 12, 5, 7 );; 
+gap> PC12 := Image( IsomorphismPermObject( C12 ) );
+[Group( [ (5,6,7), (3,4), (1,2) ] ) => Group( [ (3,4)(5,7,6) ] )]
+gap> MappingGeneratorsImages( TailMap( PC12 ) );
+[ [ (5,6,7), (3,4), (1,2) ], [ (5,6,7), (3,4), (3,4) ] ]
+gap> MappingGeneratorsImages( HeadMap( PC12 ) );
+[ [ (5,6,7), (3,4), (1,2) ], [ (5,6,7), (3,4), () ] ]
+gap> gg12 := GroupGroupoid( PC12 );; 
+gap> pgg12 := Pieces( gg12 );;
+gap> Length( pgg12 );
+3
+gap> p1 := pgg12[1];;
+gap> ObjectList( p1 );
+[ (), (3,4) ]
+gap> RaysOfGroupoid( p1 );
+[ ()>-()->(), ()>-(1,2)(3,4)->(3,4) ]
 ]]></Example>
 
 <ManSection>
@@ -1537,30 +1537,11 @@ and show that <M>g_1*g_2</M> and <M>e_1*e_2</M> give very different results.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> piece2 := Pieces( gpd33 )[2];;
-gap> obs2 := piece2!.objects; 
-[ (12,13), (11,12), (11,13) ]
-gap> RaysOfGroupoid( piece2 );
-[ (12,13)>-(2,3)(5,6)(8,9)->(12,13), (12,13)>-(2,3)(5,6)(7,9)->(11,13), 
-  (12,13)>-(2,3)(5,6)(7,8)->(11,12) ]
-gap> g1 := (1,2)(5,6)(7,9);; 
-gap> g2 := (2,3)(4,5)(7,8);;                         
-gap> g1 * g2;
-(1,3,2)(4,5,6)(7,9,8)
-gap> e1 := GroupGroupoidElement( C33, (12,13), g1 ); 
-(11,12)>-(1,2)(5,6)(7,9)->(12,13)
-gap> e2 := GroupGroupoidElement( C33, (12,13), g2 );
-(12,13)>-(2,3)(4,5)(7,8)->(11,13)
-gap> e1*e2;
-(11,12)>-(1,2)(4,5)(8,9)->(11,13)
-gap> e2^-1;
-(11,13)>-(1,3)(4,6)(7,9)->(12,13)
-gap> obgp := ObjectGroup( gpd33, (11,12) );;
-gap> GeneratorsOfGroup( obgp )[1];
-(11,13)>-(1,3)(5,6)(8,9)->(11,13)
-gap> Homset( gpd33, (11,12), (11,13) );
-<homset (11,12) -> (11,13) with head group Group(
-[ (11,12)>-(1,2)(5,6)(8,9)->(11,12), (11,12)>-(1,2)(4,5)(7,9)->(11,12) ] )>
+gap> p2 := Pieces( gg12 )[2];;
+gap> obs2 := p2!.objects; 
+[ (5,6,7), (3,4)(5,6,7) ]
+gap> RaysOfGroupoid( p2 );
+[ (5,6,7)>-(5,6,7)->(5,6,7), (5,6,7)>-(1,2)(3,4)(5,6,7)->(3,4)(5,6,7) ]
 ]]></Example>
 
 </Section>
