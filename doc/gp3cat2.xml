@@ -366,15 +366,9 @@ The actor crossed square <C>XSact</C> was constructed in section
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> xsC2a := CrossedSquareOfCat2Group( C2a );
-crossed square with crossed modules:
-      up = [Group( [ () ] ) -> Group( [ (1,4)(2,5)(3,6) ] )]
-    left = [Group( [ () ] ) -> Group( [ (1,3,5)(2,4,6) ] )]
-   right = [Group( [ (1,4)(2,5)(3,6) ] ) -> Group( [ (), (2,6)(3,5) ] )]
-    down = [Group( [ (1,3,5)(2,4,6) ] ) -> Group( [ (), (2,6)(3,5) ] )]
-
-gap> IdGroup( xsC2a );
-[ [ 1, 1 ], [ 2, 1 ], [ 3, 1 ], [ 2, 1 ] ]
+gap> xsC2a := CrossedSquareOfCat2Group( C2a );;
+gap> StructureDescription( xsC2a );
+[ "1", "C2", "C3", "C2" ]
 
 gap> SetName( Source( Right2DimensionalGroup( XSact ) ), "c5:c4" );
 gap> SetName( Range( Right2DimensionalGroup( XSact ) ), "c5:c4" );

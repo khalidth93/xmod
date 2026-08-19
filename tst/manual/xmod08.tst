@@ -380,16 +380,10 @@ gap> mor2 := Cat2GroupMorphismByCat1GroupMorphisms( C2a, C2a, upmor, ltmor );;
 gap> mor1 = mor2; 
 true
 
-# doc/gp3cat2.xml:368-390
-gap> xsC2a := CrossedSquareOfCat2Group( C2a );
-crossed square with crossed modules:
-      up = [Group( [ () ] ) -> Group( [ (1,4)(2,5)(3,6) ] )]
-    left = [Group( [ () ] ) -> Group( [ (1,3,5)(2,4,6) ] )]
-   right = [Group( [ (1,4)(2,5)(3,6) ] ) -> Group( [ (), (2,6)(3,5) ] )]
-    down = [Group( [ (1,3,5)(2,4,6) ] ) -> Group( [ (), (2,6)(3,5) ] )]
-
-gap> IdGroup( xsC2a );
-[ [ 1, 1 ], [ 2, 1 ], [ 3, 1 ], [ 2, 1 ] ]
+# doc/gp3cat2.xml:368-384
+gap> xsC2a := CrossedSquareOfCat2Group( C2a );;
+gap> StructureDescription( xsC2a );
+[ "1", "C2", "C3", "C2" ]
 
 gap> SetName( Source( Right2DimensionalGroup( XSact ) ), "c5:c4" );
 gap> SetName( Range( Right2DimensionalGroup( XSact ) ), "c5:c4" );
@@ -403,7 +397,7 @@ gap> C2act := Cat2GroupOfCrossedSquare( XSact );
 gap> Size3d( C2act );
 [ 80000, 400, 400, 20 ]
 
-# doc/gp3cat2.xml:406-422
+# doc/gp3cat2.xml:400-416
 gap> G24 := SmallGroup( 24, 10 );; 
 gap> w := G24.1;; x := G24.2;; y := G24.3;; z := G24.4;; o := One(G24);; 
 gap> R := Subgroup( G24, [x,y] );; 
@@ -420,7 +414,7 @@ gap> C1sub := Subdiagonal2DimensionalGroup( C2wxy );;
 gap> [ IsCat1Group(dg), IsCat1Group(C1sub), IsSub2DimensionalGroup(dg,C1sub) ];
 [ true, true, true ]
 
-# doc/gp3cat2.xml:441-460
+# doc/gp3cat2.xml:435-454
 gap> gps := GroupsOfHigherDimensionalGroup( C2ab );;
 gap> c6c2 := Subgroup( gps[1], [ (1,2,3,4,5,6), (8,12)(9,11) ] );;
 gap> c2c2 := Subgroup( gps[2], [ (1,4)(2,5)(3,6), (8,12)(9,11) ] );;
@@ -440,13 +434,13 @@ right tail=head: [ [ (1,4)(2,5)(3,6), ( 8,12)( 9,11) ],
  down tail=head: [ [ (1,5,3)(2,6,4), ( 8,12)( 9,11) ], [ (), ( 8,12)( 9,11) ] 
  ]
 
-# doc/gp3cat2.xml:472-477
+# doc/gp3cat2.xml:466-471
 gap> TC2ab := TrivialSubCat2Group( C2ab );
 (pre-)cat2-group with generating (pre-)cat1-groups:
 1 : [Group( () ) => Group( () )]
 2 : [Group( () ) => Group( () )]
 
-# doc/gp3cat2.xml:524-557
+# doc/gp3cat2.xml:518-551
 gap> G8 := Group( (1,2), (3,4), (5,6) );;
 gap> A := Subgroup( G8, [ (1,2) ] );; 
 gap> B := Subgroup( G8, [ (3,4) ] );;
@@ -480,7 +474,7 @@ gap> for C2 in iso do DisplayLeadMaps( C2 ); od;
    up tail/head images: [ (1,2), (), () ], [ (1,2), (), (1,2) ]
  left tail/head images: [ (), (3,4), () ], [ (), (3,4), (3,4) ]
 
-# doc/gp3cat2.xml:572-592
+# doc/gp3cat2.xml:566-586
 gap> up := Up2DimensionalGroup( iso[1] );                
 [Group( [ (1,2), (3,4), (5,6) ] ) => Group( [ (), (), (1,2) ] )]
 gap> AllCat2GroupsWithFixedUp( up );;                    
@@ -501,7 +495,7 @@ gap> for C in L do DisplayLeadMaps( C ); od;
    up tail=head images: [ (1,2), (), () ]
  left tail=head images: [ (), (3,4), (3,4) ]
 
-# doc/gp3cat2.xml:616-633
+# doc/gp3cat2.xml:610-627
 gap> AllCat2GroupsMatrix(d12);;                
 number of cat2-groups found = 41
 1.....1..1.1
@@ -519,7 +513,7 @@ number of cat2-groups found = 41
 gap> AllCat2GroupsNumber(d12); 
 41
 
-# doc/gp3cat2.xml:682-720
+# doc/gp3cat2.xml:676-714
 gap> AllCat2GroupsNumber( d12 );
 41
 gap> reps2 := AllCat2GroupsUpToIsomorphism( d12 );;
