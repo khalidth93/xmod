@@ -377,9 +377,9 @@ gap> ImageElmXModAction( X5, (5,7,9,6,8), a );
 (5,8,6,9,7)
 gap> Print( RepresentationsOfObject(X5), "\n" );
 [ "IsComponentObjectRep", "IsAttributeStoringRep", "IsPreXModObj" ]
-gap> Print( KnownAttributesOfObject(X5), "\n" );
-[ "Name", "Range", "Source", "IdGroup", "Boundary", "Size2d", "XModAction", 
-  "ExternalSetXMod", "HigherDimension" ]
+gap> Print( Set( KnownAttributesOfObject(X5) ), "\n" );
+[ "Boundary", "ExternalSetXMod", "HigherDimension", "IdGroup", "Name",
+  "Range", "Size2d", "Source", "XModAction" ]
 ]]></Example>
 
 </Section>
@@ -539,6 +539,8 @@ gap> Size2d( X88 );
 gap> Y88 := KernelCokernelXMod( X88 );;
 gap> IdGroup(Y88);
 [ [ 4, 2 ], [ 128, 928 ] ]
+gap> StructureDescription( Y88 );
+[ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ]
 gap> names := [ [ "C2 x C2", "(D8 x D8) : C2" ],
 >               [ "C2 x C2", "(((C2 x C2 x C2 x C2) : C2) : C2) : C2" ] ];;
 gap> StructureDescription( Y88 ) in names;

@@ -517,8 +517,10 @@ to the trivial group.
 </ManSection>
 <P/>
 <Example><![CDATA[
-gap> G := SmallGroup( 64, 6 );;  StructureDescription( G ); 
-"(C8 x C4) : C2"
+gap> G := SmallGroup( 64, 6 );;
+gap> names := [ "(C8 x C4) : C2", "D8 : C8" ];;
+gap> StructureDescription( G ) in names;
+true
 gap> QG := CentralQuotient( G );;  IdGroup( QG );
 [ [ 64, 6 ], [ 8, 3 ] ]
 gap> H := SmallGroup( 32, 41 );;  StructureDescription( H );

@@ -170,9 +170,11 @@ gap> Collected( size36 );
   [ [ 6, 6 ], 17 ], [ [ 9, 4 ], 102 ], [ [ 12, 3 ], 8 ], [ [ 18, 2 ], 18 ], 
   [ [ 36, 1 ], 4 ] ]
 
-# doc/isoclinic.xml:519-538
-gap> G := SmallGroup( 64, 6 );;  StructureDescription( G ); 
-"(C8 x C4) : C2"
+# doc/isoclinic.xml:519-540
+gap> G := SmallGroup( 64, 6 );;
+gap> names := [ "(C8 x C4) : C2", "D8 : C8" ];;
+gap> StructureDescription( G ) in names;
+true
 gap> QG := CentralQuotient( G );;  IdGroup( QG );
 [ [ 64, 6 ], [ 8, 3 ] ]
 gap> H := SmallGroup( 32, 41 );;  StructureDescription( H );
@@ -190,7 +192,7 @@ gap> QK := CentralQuotient( K );;  IdGroup( QK );
 gap> AreIsoclinicDomains( G, K );
 false
 
-# doc/isoclinic.xml:565-582
+# doc/isoclinic.xml:567-584
 gap> DerivedSubgroup(G);     
 Group([ f3, f5 ])
 gap> IsStemDomain( G );
@@ -208,13 +210,13 @@ gap> AllStemGroupFamilies( 32 );
       [ 32, 33 ], [ 32, 34 ], [ 32, 35 ] ], [ [ 32, 43 ], [ 32, 44 ] ], 
   [ [ 32, 49 ], [ 32, 50 ] ] ]
 
-# doc/isoclinic.xml:600-605
+# doc/isoclinic.xml:602-607
 gap> IsoclinicMiddleLength( G );
 1
 gap> IsoclinicRank( G );
 4
 
-# doc/isoclinic.xml:641-660
+# doc/isoclinic.xml:643-662
 gap> C82 := Cat1Group( 16, 8, 2 );;
 gap> X82 := XMod(C82);  IdGroup( X82 );
 [Group( [ f1*f2*f3, f3, f4 ] )->Group( [ f2, f2 ] )]
@@ -234,13 +236,13 @@ gap> Display( ism829 );
   [[Group( [ f3 ] ) -> Group( <identity> of ... )] => [Group( 
     [ f3 ] ) -> Group( <identity> of ... )]] ]
 
-# doc/isoclinic.xml:677-682
+# doc/isoclinic.xml:679-684
 gap> IsStemDomain(X82);
 true
 gap> IsStemDomain(X9);
 false
 
-# doc/isoclinic.xml:695-700
+# doc/isoclinic.xml:697-702
 gap> IsoclinicMiddleLength(X82);
 [ 1, 0 ]
 gap> IsoclinicRank(X82);        
